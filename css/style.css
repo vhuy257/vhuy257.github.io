@@ -197,6 +197,12 @@ iframe {
   font-size: 1rem;
 }
 
+#educationSection ul li::before,
+#interests ul li::before {
+  content: '-';
+  margin-right: 5px;
+}
+
 #target, #skills, #interests {
   margin: 1rem;
   text-align: left;
