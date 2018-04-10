@@ -367,6 +367,12 @@ body[data-ajax-transitions="true"] #ajax-loading-screen[data-method="standard"],
   -webkit-animation: 2s cubic-bezier(0.63, 0.045, 0.34, 1) 0s normal none infinite spinning_animation;
 }
 
+.button.is-rounded {
+  border-radius: 290486px;
+  padding-left: 1em;
+  padding-right: 1em;
+}
+
 .default-loading-icon:before {
   position: absolute;
   content: "";
@@ -416,6 +422,60 @@ body[data-ajax-transitions="true"] #ajax-loading-screen[data-method="standard"],
   width: 100%;
   border-radius: 3px;
   color: #fff;
+  margin-top: 1em;
+}
+
+.collection_tutorial.flex .panel-content {
+    display: -ms-flex;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.collection_tutorial.flex .panel-content .item-content{
+  width: calc(50% - 10px);
+  margin: 5px;
+}
+.collection_tutorial .panel-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.collection_tutorial .panel-content {
+  margin-top: 1em;
+  padding-left: 2em;
+  margin-left: 2em;
+}
+
+.collection_tutorial .item-content {
+  border-radius: 4px;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  border: 1px solid #cdcdcd;
+  margin-bottom: 1em;
+}
+
+.collection_tutorial .item-content .box {
+  background: none;
+  border-radius: 0;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.collection_tutorial .box .description-box a{
+  margin: 2px;
+}
+
+.collection_tutorial .content h3:not(:first-child) {
+  margin-top: 0;
 }
 
 .timeline-group::before {

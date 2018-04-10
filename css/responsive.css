@@ -1,6 +1,6 @@
 @media (min-width: 768px) {
   #left-sidebar { display: block; position: fixed; }
-  .main-content { padding-left: 400px; }
+  .main-content { padding-left: 400px; margin-bottom: 2em;}
   .timeline-group .item-content {opacity: 0; padding-top: 1em; width: 100%;}
   .row {
   	display: -ms-flex;

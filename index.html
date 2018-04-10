@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en" ng-app="app">
-
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -18,9 +17,9 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 	<script src="js/tether.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-sanitize.min.js"></script>
 	<script src="js/script.js"></script>
 </head>
-
 <body data-ajax-transitions="true" ng-controller="infoCtrl">
 	<div id="ajax-loading-screen" data-disable-fade-on-click="1" data-effect="standard" data-method="standard">
 		<span class="loading-icon none">
@@ -52,12 +51,6 @@
 						{{currentInfo.objective}}
 					</p>
 				</div>
-				<!-- <div id="skills">
-					<h3>#Skills</h3>
-					<div class="_skill-container">
-						<a ng-repeat="s in skills" ng-href="{{s.href}}" target="_blank"><img ng-src="images/{{s.image}}" alt="{{s.name}}" class="img-responsive hvr-float" width="50" height="50"></a>
-					</div>
-				</div> -->
 				<div id="interests">
 					<h3>#Interests</h3>
 					<ul>
@@ -140,18 +133,40 @@
 					</div>
 				</div>
 				<!--end accordion -->
-				<!-- <div class="fb-comments" data-href="http://vhuy2571990.github.io" data-numposts="5"></div> -->
-				<!-- <div id="fb-root"></div> -->
-				<!-- <script>
-					(function(d, s, id) {
-						var js, fjs = d.getElementsByTagName(s)[0];
-						if (d.getElementById(id)) return;
-						js = d.createElement(s);
-						js.id = id;
-						js.src = 'https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.11';
-						fjs.parentNode.insertBefore(js, fjs);
-					}(document, 'script', 'facebook-jssdk'));
-				</script> -->
+				<!-- Tutorial Collection -->
+				<section class="collection_tutorial" ng-class="{'flex': currentMode == 'grid'}">
+					<div class="panel-header" role="tab" id="headingTwo">
+						<h5 class="panel-title">#Collection</h5>
+						<button class="button is-primary is-rounded" ng-click="isToggleMode()"><span><span ng-bind-html="checkCurrentMode()"></span> <i class="icons" ng-class="{'icon-grid': currentMode == 'list', 'icon-list': currentMode == 'grid'}"></i></span></button>
+					</div>
+					<div class="panel-content">
+						<div class="item-content" ng-repeat="m in listTuto">
+							<div class="box">
+							  <article class="media">
+							    <div class="media-left">
+							      <figure class="image is-128x128">
+							        <img src="https://bulma.io/images/placeholders/128x128.png" alt="Image" ng-if="m.image == ''">
+											<img ng-src="{{m.image}}" alt="">
+							      </figure>
+							    </div>
+							    <div class="media-content">
+							      <div class="content">
+							          <h3 class="subtitle is-3">{{m.title}}
+													<a class="button is-link" ng-href="{{m.tutLink}}" target="_blank" ng-if="m.tutLink">Link tutorial</a>
+													<a class="button is-info is-outlined" ng-href="{{m.demoLink}}" target="_blank" ng-if="m.demoLink">Demo</a>
+												</h3>
+												<h5 ng-bind-html="m.description" class="description-box"></h5>
+												<div class="tags has-addons">
+												  <span class="tag">Resource</span>
+												  <span class="tag is-primary">{{m.resource}}</span>
+												</div>
+							      </div>
+							    </div>
+							  </article>
+							</div>
+						</div>
+					</div>
+				</section>
 			</div>
 			<!-- end col 8-->
 		</div>
@@ -170,6 +185,17 @@
 		</div>
 		<button class="modal-close is-large" ng-click="closeModal()" aria-label="close"></button>
 	</div>
+	<!-- <div class="fb-comments" data-href="http://vhuy2571990.github.io" data-numposts="5"></div> -->
+	<!-- <div id="fb-root"></div> -->
+	<!-- <script>
+		(function(d, s, id) {
+			var js, fjs = d.getElementsByTagName(s)[0];
+			if (d.getElementById(id)) return;
+			js = d.createElement(s);
+			js.id = id;
+			js.src = 'https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.11';
+			fjs.parentNode.insertBefore(js, fjs);
+		}(document, 'script', 'facebook-jssdk'));
+	</script> -->
 </body>
-
 </html>

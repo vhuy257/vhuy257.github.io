@@ -24,14 +24,14 @@
 
 })();
 
-var app = angular.module('app', []);
+var app = angular.module('app', ['ngSanitize']);
 
 app.controller('infoCtrl', function($scope){
 	$scope.listOpt = [
 		{name: 'Blog'},
 		{name: 'Shop / Ecommerce'}
 	];
-
+  $scope.currentMode = 'list'
 	var ele = $('#avatar');
 	var tween = TweenLite.to(ele, 1, {scaleX: 1.2, scaleY:1.2, ease:Power1.easeInOut, y: 0});
 
@@ -50,6 +50,22 @@ app.controller('infoCtrl', function($scope){
 
 	$scope.closeModal = function() {
 		$('.modal').removeClass('is-active');
+	}
+
+	$scope.isToggleMode = function() {
+	  switch ($scope.currentMode) {
+	  	case 'list':
+	  		$scope.currentMode = 'grid';
+	  		break;
+			case 'grid':
+			  $scope.currentMode = 'list';
+				break;
+	  	default:
+	  }
+	}
+
+	$scope.checkCurrentMode = function() {
+		return $scope.currentMode == 'list' ? 'Grid view' : 'List view';
 	}
 
 	$scope.dataWorkexperience = [
@@ -89,9 +105,36 @@ app.controller('infoCtrl', function($scope){
 		objective: 'Executed and contributed to front-end web development projects, with an emphasis on front end features, browser manipulation, and cross-browser compatibility.'
 	}
 
-	$scope.skills = [{name: 'Html', image: 'html.png', href: 'http://w3school.info'}, {name: 'Css', image: 'css3.png', href: 'http://bulma.io'}, {name: 'Javascript', image: 'js.png', href: 'https://www.javascript.com/'}, {name: 'Angular', image: 'angular.png', href: 'http://angular.io'}, {name: 'Ionic', image: 'ionic.jpg', href: 'https://ionicframework.com/'}]
-	$scope.listProject = [
-		{link: './pages/full-page/gnt-demo/index.html', name: 'Gianty Company PR site', image: './pages/full-page-gnt.png'},
-		{link: './pages/ecommerce/deer/deer.html', name: 'Deer Shopping Demo', image: './pages/deer-shop.jpg'}
+	$scope.listTuto = [
+		{
+			title: 'Image Glitch Effect',
+			image: 'https://codropspz-tympanus.netdna-ssl.com/codrops/wp-content/uploads/2017/12/ImageGlitchEffect_Featured.jpg',
+			description: 'An experimental glitch effect powered by CSS animations and the clip-path property. Inspired by the technique seen on the speakers page of the 404 conference.',
+			demoLink: 'https://tympanus.net/Tutorials/CSSGlitchEffect/index.html',
+			tutLink: 'https://tympanus.net/codrops/2017/12/21/css-glitch-effect/',
+			resource: 'Tympanus'
+		},
+		{
+			title: 'A Collection of Page Transitions',
+			image: 'https://codropspz-tympanus.netdna-ssl.com/codrops/wp-content/uploads/2013/05/PageTransitions.jpg',
+			description: 'A showcase collection of various page transition effects using CSS animations.',
+			demoLink: 'https://tympanus.net/Development/PageTransitions/',
+			tutLink: 'https://tympanus.net/codrops/2013/05/07/a-collection-of-page-transitions/',
+			resource: 'Tympanus'
+		},
+		{
+			title: 'Particles Js',
+			image: 'https://camo.githubusercontent.com/cdc9e740f0c04b77449e476c91e6f7770a6af6e7/687474703a2f2f76696e63656e74676172726561752e636f6d2f7061727469636c65732e6a732f6173736574732f696d672f6769746875622d73637265656e2e6a7067',
+			description: 'A lightweight JavaScript library for creating particles.',
+			demoLink: 'https://vincentgarreau.com/particles.js/',
+			tutLink: 'https://github.com/VincentGarreau/particles.js/',
+			resource: 'VincentGarreau'
+		},
+		{
+			title: 'Flexbox CSS framework collection',
+			image: 'https://tuandc.com/wp-content/uploads/2017/07/use-CSS.png',
+			description: '<a href="http://bulma.io/" class="button is-danger is-outlined">Bulma</a><a class="button is-danger is-outlined" href="https://wirecss.com/">Wire</a><a class="button is-danger is-outlined" href="http://juicedcss.com/">Juiced</a><a class="button is-danger is-outlined" href="https://picturepan2.github.io/spectre/index.html">Spectre CSS</a><a class="button is-danger is-outlined" href="https://github.com/leejordan/reflex">Reflex</a><a class="button is-danger is-outlined" href="http://milligram.io/">Miligram</a><a class="button is-danger is-outlined" href="https://sass-basis.github.io/">Basis</a><a class="button is-danger is-outlined" href="https://imperavi.com/kube/">Kube</a>',
+			resource: 'Google'
+		}
 	]
 });
