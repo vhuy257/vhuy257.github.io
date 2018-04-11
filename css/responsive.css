@@ -1,6 +1,6 @@
-@media (min-width: 768px) {
-  #left-sidebar { display: block; position: fixed; }
-  .main-content { padding-left: 400px; margin-bottom: 2em;}
+@media (min-width: 1024px) {
+  #left-sidebar { display: block; position: fixed; background: #fff; bottom: 0; top: 0;}
+  .main-content { padding-left: 410px; padding-bottom: 2em; background: #f5f5f5;}
   .timeline-group .item-content {opacity: 0; padding-top: 1em; width: 100%;}
   .row {
   	display: -ms-flex;
@@ -17,6 +17,26 @@
   }
   #accordion {
     border-top: none;
+  }
+  .collection_tutorial .panel-header .button {
+    display: block;
+  }
+  .collection_tutorial .media {
+    display: -webkit-flex;
+    display: -ms-flex;
+    display: flex;
+  }
+  .collection_tutorial .panel-content {
+    margin-left: 2em;
+    padding-left: 2em;
+  }
+  .collection_tutorial .image.is-128x128 {
+    width: 128px;
+    height: 128px;
+    margin-bottom: 0;
+  }
+  .collection_tutorial .media-left {
+    margin-right: 1rem;
   }
 }
 

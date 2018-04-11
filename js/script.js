@@ -132,9 +132,49 @@ app.controller('infoCtrl', function($scope){
 		},
 		{
 			title: 'Flexbox CSS framework collection',
-			image: 'https://tuandc.com/wp-content/uploads/2017/07/use-CSS.png',
+			image: 'https://www.seoclerk.com/pics/want51827-198RPv1497087087.png',
 			description: '<a href="http://bulma.io/" class="button is-danger is-outlined">Bulma</a><a class="button is-danger is-outlined" href="https://wirecss.com/">Wire</a><a class="button is-danger is-outlined" href="http://juicedcss.com/">Juiced</a><a class="button is-danger is-outlined" href="https://picturepan2.github.io/spectre/index.html">Spectre CSS</a><a class="button is-danger is-outlined" href="https://github.com/leejordan/reflex">Reflex</a><a class="button is-danger is-outlined" href="http://milligram.io/">Miligram</a><a class="button is-danger is-outlined" href="https://sass-basis.github.io/">Basis</a><a class="button is-danger is-outlined" href="https://imperavi.com/kube/">Kube</a>',
 			resource: 'Google'
+		},
+		{
+			title: 'Creative Gooey Effects',
+			image: 'https://codropspz-tympanus.netdna-ssl.com/codrops/wp-content/uploads/2015/03/CreativeGooeyEffects1.jpg',
+			description: 'A set of examples that use a gooey SVG filter for creating a variety of different effects for all kinds of website components.',
+			demoLink: 'https://tympanus.net/Development/CreativeGooeyEffects/pagination.html',
+			tutLink: 'https://tympanus.net/codrops/2015/03/10/creative-gooey-effects/',
+			resource: 'Tympanus - Lucas Bebber'
+		},
+		{
+			title: 'Slice Revealer',
+			image: 'https://codropspz-tympanus.netdna-ssl.com/codrops/wp-content/uploads/2018/02/SliceReveal.jpg',
+			description: 'A reveal effect where animated slices cover and uncover an image. Inspired by Zhenya Rynzhuk\'s transitions experiments.',
+			demoLink: 'https://tympanus.net/Development/SliceRevealer/',
+			tutLink: 'https://tympanus.net/codrops/2018/02/06/slice-revealer/',
+			resource: 'Tympanus - Mary Lou'
+		},
+		{
+			title: 'Expanding Grid Menu',
+			image: 'https://codropspz-tympanus.netdna-ssl.com/codrops/wp-content/uploads/2018/03/GridMenu_featured.jpg',
+			description: 'A CSS Grid powered menu with a box',
+			demoLink: 'https://tympanus.net/Development/GridMenu/index2.html',
+			tutLink: 'https://tympanus.net/codrops/2018/03/28/grid-menu/',
+			resource: 'Tympanus - Mary Lou'
+		},
+		{
+			title: 'Page Preloading Effect',
+			image: 'https://codropspz-tympanus.netdna-ssl.com/codrops/wp-content/uploads/2014/08/PagePreloadingEffect1.png',
+			description: 'A tutorial on how to re-create the page preloading effect seen on the website of Fontface Ninja. We are going to use CSS animations, 3D transforms and SVGs.',
+			demoLink: 'https://tympanus.net/Tutorials/PagePreloadingEffect/index2.html',
+			tutLink: 'https://tympanus.net/codrops/2014/08/05/page-preloading-effect/',
+			resource: 'Tympanus - Mary Lou'
+		},
+		{
+			title: 'Inspiration for Article Intro Effects',
+			image: 'https://codropspz-tympanus.netdna-ssl.com/codrops/wp-content/uploads/2014/05/ArticleIntroEffects.png',
+			description: 'Some inspiration for effects applied to title headers of articles with a fullscreen image. The idea is to show some creative transition when continuing to the article body.',
+			tutLink: 'https://tympanus.net/codrops/2014/05/22/inspiration-for-article-intro-effects/',
+			demoLink: 'https://tympanus.net/Development/ArticleIntroEffects/index4.html',
+			resource: 'Tympanus - Mary Lou'
 		}
 	]
 });

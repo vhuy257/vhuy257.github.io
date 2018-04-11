@@ -402,7 +402,7 @@ body[data-ajax-transitions="true"] #ajax-loading-screen[data-method="standard"],
   position: absolute;
   left: -7px;
   top: 1.5em;
-  background: #fff;
+  background: #f5f5f5;
 }
 
 .timeline-group .item-marker.process {
@@ -441,6 +441,11 @@ body[data-ajax-transitions="true"] #ajax-loading-screen[data-method="standard"],
   width: calc(50% - 10px);
   margin: 5px;
 }
+
+.collection_tutorial .media{
+    display: block;
+}
+
 .collection_tutorial .panel-header {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -449,18 +454,33 @@ body[data-ajax-transitions="true"] #ajax-loading-screen[data-method="standard"],
       -ms-flex-pack: justify;
           justify-content: space-between;
 }
+
+.collection_tutorial .panel-header .button {
+  display: none;
+}
+
+.collection_tutorial .media-left {
+  margin-right: 0;
+}
+
+.collection_tutorial .image.is-128x128 {
+  width: 100%;
+  height: auto;
+  margin-bottom: 1rem;
+}
+
 .collection_tutorial .panel-content {
   margin-top: 1em;
-  padding-left: 2em;
-  margin-left: 2em;
+  padding-left: 0;
+  margin-left: 0;
 }
 
 .collection_tutorial .item-content {
   border-radius: 4px;
   -webkit-box-shadow: none;
           box-shadow: none;
-  border: 1px solid #cdcdcd;
   margin-bottom: 1em;
+  background: #fff;
 }
 
 .collection_tutorial .item-content .box {
