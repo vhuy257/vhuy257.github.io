@@ -22,6 +22,7 @@
 </head>
 <body data-ajax-transitions="true" ng-controller="infoCtrl">
 	<div id="ajax-loading-screen" data-disable-fade-on-click="1" data-effect="standard" data-method="standard">
+		<div class="img-loading-wrapper"><img src="images/avatar-svg.svg" class="avatar-loading" width="124" height="74" alt=""></div>
 		<span class="loading-icon none">
 			<span class="default-loading-icon spin"></span>
 		</span>
@@ -31,8 +32,8 @@
 		<div class="row">
 			<nav id="left-sidebar" class="col-sm-6 col-md-4 col-lg-3 col-xs-12 left-sidebar">
 				<div class="user-info">
-					<!-- <div id="gsap-test"></div> -->
 					<img src="images/avatar-svg.svg" id="avatar" class="avatar img-responsive center-block img-circle" width="74" height="74" alt="">
+					<a ng-click="toggleScreen('full')"><i class="icon-size-fullscreen icons"></i></a>
 					<div class="user-name text-xs-center">
 						Huy Nguyễn
 					</div>
@@ -68,6 +69,7 @@
 			<div class="col-md-8 col-sm-6 col-lg-9 col-xs-12 m-t-1 main-content">
 				<div id="accordion" role="tablist" aria-multiselectable="true">
 					<div class="panel panel-default first">
+						<a ng-click="toggleScreen('actual')"><i class="icon-size-actual icons"></i></a>
 						<div class="panel-header" role="tab" id="headingOne">
 							<h5 class="panel-title">
 				           #Education

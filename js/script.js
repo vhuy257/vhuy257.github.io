@@ -64,6 +64,10 @@ app.controller('infoCtrl', function($scope){
 	  }
 	}
 
+	$scope.toggleScreen = function(val) {
+			return val == 'full' ? $('body').addClass('fullscreen') : $('body').removeClass('fullscreen');
+	}
+
 	$scope.checkCurrentMode = function() {
 		return $scope.currentMode == 'list' ? 'Grid view' : 'List view';
 	}
@@ -174,6 +178,21 @@ app.controller('infoCtrl', function($scope){
 			description: 'Some inspiration for effects applied to title headers of articles with a fullscreen image. The idea is to show some creative transition when continuing to the article body.',
 			tutLink: 'https://tympanus.net/codrops/2014/05/22/inspiration-for-article-intro-effects/',
 			demoLink: 'https://tympanus.net/Development/ArticleIntroEffects/index4.html',
+			resource: 'Tympanus - Mary Lou'
+		},
+		{
+			title: 'Using the Intersection Observer API to Trigger Animations and Transitions',
+			image: 'https://developers.google.com/web/updates/images/2016/04/intersectionobserver/intersectratio.png',
+			description: 'Using the Intersection Observer API to Trigger Animations and Transitions',
+			tutLink: 'https://alligator.io/js/intersection-observer/',
+			resource: 'alligator.io'
+		},
+		{
+			title: 'Off Canvas Menu Effect',
+			image: 'https://codropspz-tympanus.netdna-ssl.com/codrops/wp-content/uploads/2014/09/OffCanvasMenuEffects_Featured.png',
+			description: 'Some inspiration for off-canvas menu effects and styles using CSS transitions and SVG path animations.',
+			demoLink:'https://tympanus.net/Development/OffCanvasMenuEffects/elastic.html',
+			tutLink: 'https://tympanus.net/codrops/2014/09/16/off-canvas-menu-effects/',
 			resource: 'Tympanus - Mary Lou'
 		}
 	]
