@@ -27,10 +27,6 @@
 var app = angular.module('app', ['ngSanitize']);
 
 app.controller('infoCtrl', function($scope){
-	$scope.listOpt = [
-		{name: 'Blog'},
-		{name: 'Shop / Ecommerce'}
-	];
   $scope.currentMode = 'list'
 	var ele = $('#avatar');
 	var tween = TweenLite.to(ele, 1, {scaleX: 1.2, scaleY:1.2, ease:Power1.easeInOut, y: 0});
@@ -193,6 +189,14 @@ app.controller('infoCtrl', function($scope){
 			description: 'Some inspiration for off-canvas menu effects and styles using CSS transitions and SVG path animations.',
 			demoLink:'https://tympanus.net/Development/OffCanvasMenuEffects/elastic.html',
 			tutLink: 'https://tympanus.net/codrops/2014/09/16/off-canvas-menu-effects/',
+			resource: 'Tympanus - Mary Lou'
+		},
+		{
+			title: 'Animated SVG Frame Slideshow',
+			image: 'https://codropspz-tympanus.netdna-ssl.com/codrops/wp-content/uploads/2017/11/AnimatedFrameSlideshow_Featured.jpg',
+			description: 'An experimental slideshow that shows an animated SVG frame when transitioning between slides. Different shapes can be used for creating a variety of styles.',
+			demoLink: 'https://tympanus.net/Development/AnimatedFrameSlideshow/index2.html',
+			tutLink: 'https://tympanus.net/codrops/2017/11/15/animated-svg-frame-slideshow/',
 			resource: 'Tympanus - Mary Lou'
 		}
 	]
