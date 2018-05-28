@@ -69,11 +69,10 @@
 			<div class="col-md-8 col-sm-6 col-lg-9 col-xs-12 m-t-1 main-content">
 				<div id="accordion" role="tablist" aria-multiselectable="true">
 					<div class="panel panel-default first">
-						<a ng-click="toggleScreen('actual')"><i class="icon-size-actual icons"></i></a>
 						<div class="panel-header" role="tab" id="headingOne">
 							<h5 class="panel-title">
 				           #Education
-				      </h5>
+				      </h5><span><a ng-click="toggleScreen('actual')"><i class="icon-size-actual icons"></i></a></span>
 						</div>
 						<div id="educationSection" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
 							<ul>
@@ -156,7 +155,7 @@
 							    </div>
 							    <div class="media-content">
 							      <div class="content">
-							          <h3 class="subtitle is-3">{{m.title}}
+							          <h3 class="subtitle is-4">{{m.title}}
 													<a class="button is-link" ng-href="{{m.tutLink}}" target="_blank" ng-if="m.tutLink">Link tutorial</a>
 													<a class="button is-info is-outlined" ng-href="{{m.demoLink}}" target="_blank" ng-if="m.demoLink">Demo</a>
 												</h3>

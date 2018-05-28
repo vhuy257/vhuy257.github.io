@@ -55,6 +55,12 @@ iframe {
   font-size: 25px;
 }
 
+#headingOne h5 ~ span{
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 10px;
+}
+
 #educationSection {
   padding-left: 4em;
 }
