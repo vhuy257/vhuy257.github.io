@@ -8,18 +8,22 @@
 
 	$(document).ready(function(){
 		var _innerHeight1 = $('.timeline-group.first').innerHeight() + 30,
-		    _innerHeight2 = $('.timeline-group.second').innerHeight() + 30;
+		    _innerHeight2 = $('.timeline-group.second').innerHeight() + 30,
+				_innerHeight3 = $('.timeline-group.third').innerHeight() + 30;
 		TweenLite.fromTo("#accordion .panel.first", 2, {css: {opacity:0}}, {css: {opacity: 1}, ease: Sine});
 		TweenLite.fromTo(".timeline-group.first", 1, {css: {height: "0px", overflow: "hidden"}}, {css: {height: _innerHeight1, overflow: "visible"}, delay: 1, ease: Sine});
 		TweenLite.fromTo(".timeline-group.second", 1, {css: {height: "0px", overflow: "hidden"}}, {css: {height: _innerHeight2, overflow: "visible"}, delay: 3, ease: Elastic});
+		TweenLite.fromTo(".timeline-group.third", 1, {css: {height: "0px", overflow: "hidden"}}, {css: {height: _innerHeight3, overflow: "visible"}, delay: 5, ease: Elastic});
 		TweenLite.to(".timeline-group.first .item-content", 1, {opacity: 1, delay: 2, ease: Power1.easeInOut});
 		TweenLite.to(".timeline-group.second .item-content", 1, {opacity: 1, delay: 5, ease: Power1.easeInOut});
+		TweenLite.to(".timeline-group.third .item-content", 1, {opacity: 1, delay: 7, ease: Power1.easeInOut});
 		TweenLite.to("#disqus_thread", 1, {opacity: 1, delay: 6, ease: Power2.easeInOut});
 	});
 
 	$(window).resize(function() {
 			$(".timeline-group.first").css("height", "auto");
 			$(".timeline-group.second").css("height", "auto");
+			$(".timeline-group.third").css("height", "auto");
 	});
 
 })();
@@ -83,7 +87,7 @@ app.controller('infoCtrl', function($scope){
 			]
 		},
 		{
-			company: 'Isobar Ecommerce Expert',
+			company: 'Isobar Ecommerce VietNam',
 			time: 'March 2017',
 			years: '2017',
 			works: [
@@ -91,6 +95,15 @@ app.controller('infoCtrl', function($scope){
 				{content: '- UI/UX developer, fix bug, HTML, CSS, Javascript.'},
 				{content: '- Fix FrontEnd Bugs, JavaScript, HTML, CSS.'},
 				{content: '- Research new technical about FrontEnd.'}
+			]
+		},
+		{
+			company: 'Moni Media',
+			time: 'November 2018 - Now',
+			years: '2018',
+			works: [
+				{content: '- Work as Front-end developer for Magento platform theme UI.'},
+				{content: '- Fix FrontEnd Bugs, JavaScript, HTML, CSS.'}
 			],
 			process: true
 		}
