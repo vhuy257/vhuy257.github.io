@@ -1,8 +1,17 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import "./globals.css";
+import localFont from 'next/font/local'
+import "./globals.scss";
+import SmoothScrolling from "./components/SmoothScrolling/SmoothScrolling";
 
-const inter = Inter({ subsets: ["latin"] });
+const audrey = localFont({
+  src: './fonts/Audrey-Medium.otf',
+  variable: '--font-audrey'
+})
+
+const calibri = localFont({
+  src: './fonts/CerebriSans-Book.ttf',
+  variable: '--font-calibri'
+})
 
 export const metadata: Metadata = {
   title: "Huy Nguyen Porfolio",
@@ -16,7 +25,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={`${audrey.variable} ${calibri.variable}`}>
+        <SmoothScrolling>
+          {children}
+        </SmoothScrolling>
+      </body>
     </html>
   );
 }
