@@ -9,10 +9,11 @@ import "aos/dist/aos.css"
 const dataTheme = [
   {
     imageUrl: '/slider-1.jpg',
-    demoLink: '/basilico'
+    demoLink: '/basilico/about'
   },
   {
     imageUrl: '/slider-2.jpg',
+    demoLink: '/coffee-shop'
   },
   {
     imageUrl: '/slider-3.jpg',
@@ -66,7 +67,7 @@ export default function Home() {
               data-aos-delay={`${index+1}00`} 
               key={index}
             >
-              <Link href={k.demoLink ?? "#"} className="inline-block transition-all hover:-translate-y-1">
+              <Link href={k.demoLink ?? "#"} className="inline-block transition-all hover:-translate-y-2 ease-in-out duration-300">
                 <Image src={k?.imageUrl} alt="Basilico" width={1769} height={679} className="object-cover rounded-md"/>
               </Link>
             </div>
