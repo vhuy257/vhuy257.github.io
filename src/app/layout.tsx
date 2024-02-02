@@ -25,7 +25,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${audrey.variable} ${calibri.variable}`}>
+      <body className={`${audrey.variable} ${calibri.className}`}>
         <SmoothScrolling>
           {children}
         </SmoothScrolling>
