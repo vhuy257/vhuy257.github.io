@@ -1,17 +1,20 @@
 import type { Metadata } from "next";
-import localFont from 'next/font/local'
+import localFont from "next/font/local";
+import SmoothScrolling from "../components/SmoothScrolling/SmoothScrolling";
+import { GeistSans } from 'geist/font/sans';
+import { GeistMono } from 'geist/font/mono';
+
 import "./globals.scss";
-import SmoothScrolling from "./components/SmoothScrolling/SmoothScrolling";
 
-const audrey = localFont({
-  src: './fonts/Audrey-Medium.otf',
-  variable: '--font-audrey'
-})
+// const audrey = localFont({
+//   src: "./fonts/Audrey-Medium.otf",
+//   variable: "--font-audrey",
+// });
 
-const calibri = localFont({
-  src: './fonts/CerebriSans-Book.ttf',
-  variable: '--font-calibri'
-})
+// const calibri = localFont({
+//   src: "./fonts/CerebriSans-Book.ttf",
+//   variable: "--font-calibri",
+// });
 
 export const metadata: Metadata = {
   title: "Huy Nguyen FE | Porfolio",
@@ -25,10 +28,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${audrey.variable} ${calibri.className}`}>
-        <SmoothScrolling>
-          {children}
-        </SmoothScrolling>
+      <body className={`${GeistSans .className}`}>
+        <SmoothScrolling>{children}</SmoothScrolling>
       </body>
     </html>
   );
