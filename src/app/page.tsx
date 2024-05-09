@@ -29,43 +29,43 @@ const workExpsData = [
     companyName: "Lotte Data Communication",
     position: "Senior Frontend Developer",
     description: [
-      "Build UI/UX website lottemart.vn",
-      "Work with NextJs, Redux Thunk, Next Authentication",
-      "Work with login social networking service, Tailwindcss, Typescript",
-      "Build Cart Page Business logic function.",
+      "Develop the UI/UX for the website lottemart.vn.",
+      "Utilize Next.js, Redux Thunk, and Next Authentication in the development process.",
+      "Implement login functionality with social networking services, utilizing Tailwind CSS and TypeScript.",
+      "Create the business logic functions for the Cart Page.",
     ],
   },
   {
     companyName: "TagWW",
     position: "Senior Frontend Developer",
     description: [
-      "Build Admin Dashboard System Manage User",
-      "Work with React, NextJs, Redux Thunk, Next Authentication, Typescript Charka UI",
-      "Build react custom hook fetching data, interceptor",
-      "Build business logic function for handling user role data, assets management",
-      "Write unit test with cypress",
+      "Develop an Admin Dashboard System for User Management.",
+      "Utilize React, Next.js, Redux Thunk, Next Authentication, and TypeScript, with Chakra UI for the UI components.",
+      "Implement React custom hooks for data fetching and interceptors.",
+      "Create business logic functions for managing user roles and assets.",
+      "Write unit tests using Cypress.",
     ],
   },
   {
     companyName: "Isobar Commerce",
     position: "Frontend Developer",
     description: [
-      "Work with react router dom, Ant design, Material Design, Typescript",
-      "Front-end developer for Magento platform theme UI.",
-      "Work with NextJs, Redux Thunk, Next Authentication",
-      "Work with react PWA",
-      "Fixed front end bugs.",
-      "Report to Team leader, Manager",
+      "Collaborated on projects using React Router DOM, Ant Design, Material Design, and TypeScript.",
+      "Contributed as a front-end developer specializing in Magento platform theme UI.",
+      "Utilized Next.js, Redux Thunk, and Next Authentication in project development.",
+      "Implemented React Progressive Web App (PWA) features.",
+      "Resolved various front-end bugs.",
+      "Provided regular reports to Team Leader and Manager.",
     ],
   },
   {
     companyName: "Gianty",
     position: "Frontend Developer",
     description: [
-      "Do Intranet Social Network Website for company, help improve UI/UX and developed main company website gnt.co.jp.",
-      "Created and maintained the front-end standards document and oversaw production of Javascript, HTML, and CSS.",
-      "Fixed front end bugs.",
-      "Write Hybird App Portal Internal Human manager like check in out, Absence request..., fix bug app.",
+      "Designed and developed an Intranet Social Network Website for the company, enhancing UI/UX, and also spearheaded the development of the primary company website gnt.co.jp.",
+      "Established and upheld front-end standards documentation, overseeing the production of JavaScript, HTML, and CSS.",
+      "Identified and resolved front-end bugs to ensure optimal performance.",
+      "Developed a Hybrid App for internal Human Resource management tasks such as check-in/out and absence requests, as well as addressed bugs within the application.",
     ],
   },
 ];
@@ -84,9 +84,10 @@ export default function Home() {
         <h4
           className={`mt-5 font-calibri text-3xl aos-init ${sacramento.className} text-gray-500`}
         >
-          <span className="text-4xl text-violet-500">Hi!</span> I&apos;m a Passionate 
-          <span className="text-violet-700">Frontend developer </span>. This is my official
-          personal website.
+          <span className="text-4xl text-violet-500">Hi!</span> I&apos;m a
+          Passionate
+          <span className="text-violet-700">Frontend developer </span>. This is
+          my official personal website.
         </h4>
       </section>
 
@@ -124,15 +125,15 @@ export default function Home() {
         </ul>
       </section>
 
-      <Skill/>
+      <Skill />
 
       <div className="download-cv">
-        <Button>Download CV</Button>
+        <Button variant={'outline'} size={'lg'} className="button--winona relative" data-text="Download CV">
+          <span>Download CV</span>
+        </Button>
       </div>
       <section className="container max-w-5xl">
-        <h2 className="text-center text-2xl">
-          Work Experiences
-        </h2>
+        <h2 className="text-center text-2xl">Work Experiences</h2>
 
         <TracingBeam className="px-6">
           <div className="mx-auto antialiased pt-4 relative">
@@ -160,7 +161,9 @@ export default function Home() {
                   <div className="job-description">
                     <ul className="list-disc pl-5 mt-4 space-y-1">
                       {k?.description?.map((k: any, keyItem: number) => (
-                        <li key={keyItem}>{k}</li>
+                        <li key={keyItem}>
+                          <div className="content" dangerouslySetInnerHTML={{__html: k}}></div>
+                        </li>
                       ))}
                     </ul>
                   </div>
@@ -172,17 +175,12 @@ export default function Home() {
       </section>
 
       <section className="templates container max-w-7xl py-8">
-        <h1
-          className="text-center text-2xl leading-4 tracking-wide"
-        >
+        <h1 className="text-center text-2xl leading-4 tracking-wide">
           Premium HTML Theme
         </h1>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-10 gap-8">
           {dataTheme?.map((k: any, index: number) => (
-            <div
-              className="item shadow-lg rounded-md"
-              key={index}
-            >
+            <div className="item shadow-lg rounded-md" key={index}>
               <Link
                 href={k.demoLink ?? "#"}
                 className="inline-block transition-all hover:-translate-y-2 ease-in-out duration-300"
