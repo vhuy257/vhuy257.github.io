@@ -128,8 +128,10 @@ export default function Home() {
       <Skill />
 
       <div className="download-cv">
-        <Button variant={'outline'} size={'lg'} className="button--winona relative" data-text="Download CV">
-          <span>Download CV</span>
+        <Button variant={'outline'} size={'lg'} className="button--winona relative" data-text="Download CV" asChild>
+          <Link href="https://drive.google.com/file/d/1VGoZJl_M7GB6VbYM4m8dsBEYs3I2kVnf/view">
+            <span>Download CV</span>
+          </Link>
         </Button>
       </div>
       <section className="container max-w-5xl">
@@ -151,7 +153,8 @@ export default function Home() {
                 <div className="content  py-5 px-4 rounded-md relative">
                   <div className="line  w-20 h-1 absolute top-1/2 -left-20 z-10"></div>
                   <div className="title flex gap-3 justify-between items-center">
-                    <h1>
+                    <h1 className="flex items-center gap-2">
+                      <i className="lab la-battle-net text-2xl"></i>
                       <Badge variant="outline">{k.companyName}</Badge>
                     </h1>
                     <h2>
