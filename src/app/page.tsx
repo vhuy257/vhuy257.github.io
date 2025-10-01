@@ -1,14 +1,15 @@
+'use client';
 import Image from "next/image";
 import Link from "next/link";
-import { Sacramento } from "next/font/google";
+import { Lexend } from "next/font/google";
 import { TracingBeam } from "../components/ui/tracing-beam";
 import { Badge } from "@/components/ui/badge";
 import Skill from "@/components/Porfolio/skill";
-
-import "aos/dist/aos.css";
+import SplitText from "@/components/split-text";
 import { Button } from "@/components/ui/button";
+import TextType from "@/components/TextType/text-type";
 
-const sacramento = Sacramento({ subsets: ["latin"], weight: "400" });
+const lexend = Lexend({ subsets: ["latin"], weight: "400" });
 
 const dataTheme = [
   {
@@ -69,26 +70,55 @@ const workExpsData = [
     ],
   },
 ];
-
 export default function Home() {
-  // useEffect(() => {
-  //   AOS.init({ duration : 5000 })
-  // }, [])
+  const handleAnimationComplete = () => {
+    console.log('All letters have animated!');
+  };
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between gap-8">
-      <section className="logo pt-10 pb-0 text-center">
-        <h1 className={`${sacramento.className} text-6xl text-rose-700`}>
-          Huy Nguyen
-        </h1>
-        <h4
-          className={`mt-5 font-calibri text-3xl aos-init ${sacramento.className} text-gray-500`}
-        >
-          <span className="text-4xl text-violet-500">Hi!</span> I&apos;m a
-          Passionate
-          <span className="text-violet-700">Frontend developer </span>. This is
-          my official personal website.
-        </h4>
+    <main className="flex min-h-screen flex-col items-center justify-between gap-8  px-8">
+      <section className="logo pt-10 pb-0 text-center mt-10">
+        <div className="w-full grid grid-cols-4 gap-8 mx-auto">
+          <div className="right-content hidden text-right md:flex items-center justify-center">
+            <div className="w-[100px] h-[100px] rounded-full overflow-hidden shadow-lg">
+              <Image 
+                src="/avatar.png" 
+                alt="Huy Nguyen" 
+                width={300}
+                height={300}
+                className="w-full h-full object-cover"
+              />
+            </div>
+          </div>
+          <div className="left-content text-left col-span-3">
+            <SplitText
+              text="Huy Nguyen"
+              className={`${lexend.className} text-4xl md:text-6xl pb-6 text-left w-full block`}
+              delay={100}
+              duration={0.6}
+              ease="power3.out"
+              splitType="chars"
+              from={{ opacity: 0, y: 40 }}
+              to={{ opacity: 1, y: 0 }}
+              threshold={0.1}
+              rootMargin="-100px"
+              textAlign="left"
+              onLetterAnimationComplete={handleAnimationComplete}
+            />
+            <div className="w-full block">
+              <TextType 
+                text={["Hi!", "I'm a Frontend Developer"]}
+                typingSpeed={75}
+                pauseDuration={1500}
+                showCursor={true}
+                cursorCharacter="|"
+                className={`${lexend.className} text-md md:text-3xl text-gray-700 w-full block`}
+                textColors={["#38bdf8", "#8b5cf6"] as never}
+                onSentenceComplete={handleAnimationComplete} variableSpeed={undefined}          
+              />
+            </div>
+          </div>
+        </div>
       </section>
 
       <section className="contact max-w-6xl">

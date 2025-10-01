@@ -33,7 +33,7 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts"
-  ],
+, "src/components/TextType/text-type.tsx"  ],
   "exclude": [
     "node_modules"
   ]
