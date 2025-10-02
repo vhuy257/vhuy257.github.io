@@ -70,6 +70,9 @@ export const skillsData = new Map([
   ["Next.js", "/next.svg"],
   ["TypeScript", "/ts.svg"],
   ["JavaScript", "/js.svg"],
-  ["CSS", "/css.svg"],
+  ["Zustand", "/zustand.svg"],
+  ["Redux", "/redux.svg"],
+  ["Tailwind CSS", "/tailwind.svg"],
   ["HTML", "/html.svg"],
+  ["CSS", "/css.svg"],
 ]);
