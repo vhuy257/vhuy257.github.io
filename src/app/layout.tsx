@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
-import localFont from "next/font/local";
 import SmoothScrolling from "../components/SmoothScrolling/SmoothScrolling";
-import { GeistSans } from 'geist/font/sans';
+import { Lexend } from "next/font/google";
+const lexend = Lexend({ subsets: ["latin"], weight: "400" });
 
 import "./globals.scss";
 
@@ -17,7 +17,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${GeistSans .className}`}>
+      <body className={`${lexend.className}`}>
         <SmoothScrolling>{children}</SmoothScrolling>
       </body>
     </html>
