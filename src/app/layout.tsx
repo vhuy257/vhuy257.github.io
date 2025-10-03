@@ -6,8 +6,21 @@ const lexend = Lexend({ subsets: ["latin"], weight: "400" });
 import "./globals.scss";
 
 export const metadata: Metadata = {
-  title: "Huy Nguyen FE | Porfolio",
+  title: "Huy Nguyễn — Frontend Developer",
   description: "Personal official porfolio website",
+  openGraph: {
+    title: "Huy Nguyễn — Frontend Developer",
+    description: "Personal official porfolio website",
+    url: "https://vhuy257.github.io",
+    siteName: "Huy Portfolio",
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Huy Nguyễn — Frontend Developer",
+    description: "Personal official porfolio website",
+  },
 };
 
 export default function RootLayout({
@@ -17,6 +30,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <title>Huy Nguyễn — Frontend Developer</title>
+        <meta name="description" content="Personal official porfolio website" />
+      </head>
       <body className={`${lexend.className}`}>
         <SmoothScrolling>{children}</SmoothScrolling>
       </body>
