@@ -47,11 +47,13 @@ export default function Profile() {
         <div className="right-content text-right md:flex items-center justify-center">
           <div className="w-[180px] h-[180px] rounded-full overflow-hidden shadow-lg">
             <Image
-              src="/avatar_origin.webp"
+              src="/avatar_origin_180x247.webp"
               alt="Huy Nguyen"
               width={300}
               height={300}
               className="w-full h-full object-cover"
+              priority={true}
+              fetchPriority="high"
             />
           </div>
         </div>
