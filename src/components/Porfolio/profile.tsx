@@ -3,6 +3,7 @@ import SplitText from "@/components/split-text";
 import TextType from "@/components/TextType/text-type";
 import Image from "next/image";
 import Skill from "./skill";
+import { CVDownload } from "./cv";
 
 export default function Profile() {
   const handleAnimationComplete = () => {
@@ -11,7 +12,7 @@ export default function Profile() {
 
   return (
     <section className="logo pb-0 text-center mt-10 container md:max-w-6xl px-4">
-      <div className="w-full flex justify-between gap-8 mx-auto items-center">
+      <div className="w-full flex flex-wrap-reverse sm:flex-nowrap justify-between md:justify-between gap-8 mx-auto items-center">
         <div className="left-content text-left col-span-3">
           <SplitText
             text="Huy Nguyễn"
@@ -41,6 +42,7 @@ export default function Profile() {
             />
           </div>
           <Skill />
+          <CVDownload />
         </div>
         <div className="right-content text-right md:flex items-center justify-center">
           <div className="w-[180px] h-[180px] rounded-full overflow-hidden shadow-lg">

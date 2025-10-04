@@ -2,6 +2,7 @@ import React from "react";
 
 import { Badge } from "@/components/ui/badge";
 import { workExpsData } from "@/lib/utils";
+import { Icon } from "@iconify/react";
 
 const WorkExp = () => {
   return (
@@ -23,7 +24,7 @@ const WorkExp = () => {
               <div className="line  w-20 h-1 absolute top-1/2 -left-20 z-10"></div>
               <div className="title flex gap-3 justify-between items-center">
                 <h1 className="flex items-center gap-2">
-                  <i className="lab la-battle-net text-2xl"></i>
+                  <Icon icon="weui:location-outlined" width="30" height="30" />
                   <Badge variant="outline">{k.companyName}</Badge>
                 </h1>
                 <h2>

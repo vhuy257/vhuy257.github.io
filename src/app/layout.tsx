@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
 import SmoothScrolling from "../components/SmoothScrolling/SmoothScrolling";
+import { ThemeProvider } from "../contexts/ThemeContext";
 import { Lexend } from "next/font/google";
 const lexend = Lexend({ subsets: ["latin"], weight: "400" });
 
-import "./globals.scss";
+import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Huy Nguyễn — Frontend Developer",
@@ -35,7 +36,9 @@ export default function RootLayout({
         <meta name="description" content="Personal official porfolio website" />
       </head>
       <body className={`${lexend.className}`}>
-        <SmoothScrolling>{children}</SmoothScrolling>
+        <ThemeProvider>
+          <SmoothScrolling>{children}</SmoothScrolling>
+        </ThemeProvider>
       </body>
     </html>
   );

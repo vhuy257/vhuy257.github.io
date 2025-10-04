@@ -6,8 +6,8 @@ import { projectsData } from "@/lib/utils";
 const Project = () => {
   return (
     <section className="templates container max-w-6xl py-8 px-4">
-      <h1 className="text-center text-2xl leading-4 tracking-wide">
-        Premium HTML Theme
+      <h1 className="text-left capitalize text-2xl leading-4 tracking-wide">
+        Collections
       </h1>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-10 gap-8">
         {projectsData?.map((k: any, index: number) => (
