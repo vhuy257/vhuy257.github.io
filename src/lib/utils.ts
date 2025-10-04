@@ -55,6 +55,10 @@ export const workExpsData = [
 
 export const projectsData = [
   {
+    imageUrl: "/slider-7.png",
+    demoLink: "/basilico",
+  },
+  {
     imageUrl: "/slider-1.jpg",
     demoLink: "/basilico/about",
   },
@@ -64,7 +68,20 @@ export const projectsData = [
   },
   {
     imageUrl: "/slider-3.jpg",
+    demoLink: "/basilico",
   },
+  // {
+  //   imageUrl: "/slider-4.jpg",
+  //   demoLink: "/basilico",
+  // },
+  // {
+  //   imageUrl: "/slider-5.jpg",
+  //   demoLink: "/basilico",
+  // },
+  // {
+  //   imageUrl: "/slider-6.jpg",
+  //   demoLink: "/basilico",
+  // },
 ];
 
 export const skillsData = new Map([

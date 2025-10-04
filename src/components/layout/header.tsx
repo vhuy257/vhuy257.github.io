@@ -7,7 +7,7 @@ const HeaderSocialIcon = () => {
   return (
     <div className="flex justify-between items-center container max-w-6xl mx-auto my-4">
       <div className="flex items-center gap-4 px-4">
-        <Link href="https://www.linkedin.com/in/vhuy257/">
+        <Link href="https://www.linkedin.com/in/huy-nguyen-3b67b0173/">
           <Icon icon="mdi:linkedin" width={30} height={30} />
         </Link>
         <Link href="mailto:vhuy2571990@gmail.com">
