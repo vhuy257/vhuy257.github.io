@@ -13,32 +13,30 @@ const HeaderSocialIcon = () => {
           <TooltipTrigger>
             <Link href="https://www.linkedin.com/in/huy-nguyen-3b67b0173/">
               <Icon
-                icon="mdi:linkedin"
+                icon="iconoir:linkedin"
                 width={30}
                 height={30}
                 className="hover:text-blue-600 transition-colors duration-200"
               />
             </Link>
           </TooltipTrigger>
-          <TooltipContent className="bg-gray-900 dark:bg-gray-100 text-white dark:text-gray-900 px-3 py-2 text-sm rounded-md shadow-lg border">
+          <TooltipContent className="bg-gray-900 dark:bg-gray-100 text-white dark:text-gray-900 p-2 text-xs rounded-md shadow-lg border">
             LinkedIn Profile
-            <TooltipArrow />
           </TooltipContent>
         </Tooltip>
         <Tooltip sideOffset={8}>
           <TooltipTrigger>
             <Link href="mailto:vhuy2571990@gmail.com">
               <Icon
-                icon="mdi:email"
+                icon="material-symbols-light:alternate-email"
                 width={30}
                 height={30}
                 className="hover:text-blue-500 transition-colors duration-200"
               />
             </Link>
           </TooltipTrigger>
-          <TooltipContent className="bg-gray-900 dark:bg-gray-100 text-white dark:text-gray-900 px-3 py-2 text-sm rounded-md shadow-lg border">
+          <TooltipContent className="bg-gray-900 dark:bg-gray-100 text-white dark:text-gray-900 p-2 text-xs rounded-md shadow-lg border">
             Email Me
-            <TooltipArrow />
           </TooltipContent>
         </Tooltip>
         <Tooltip sideOffset={8}>
@@ -52,9 +50,8 @@ const HeaderSocialIcon = () => {
               />
             </Link>
           </TooltipTrigger>
-          <TooltipContent className="bg-gray-900 dark:bg-gray-100 text-white dark:text-gray-900 px-3 py-2 text-sm rounded-md shadow-lg border">
+          <TooltipContent className="bg-gray-900 dark:bg-gray-100 text-white dark:text-gray-900 p-2 text-xs rounded-md shadow-lg border">
             GitHub Profile
-            <TooltipArrow />
           </TooltipContent>
         </Tooltip>
       </div>

@@ -15,7 +15,7 @@ const Project = () => {
   return (
     <section className="templates container max-w-6xl py-8 px-4">
       <h2 className="text-left text-3xl font-medium">Collections</h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 mt-10 gap-8">
+      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 mt-10 gap-8">
         {projectsData?.map((k: any, index: number) => (
           <div className="item shadow-lg rounded-md hover:translate-y-[-10px] transition-all duration-300 max-h-[300px] overflow-hidden relative group" key={index}>
             <Image
