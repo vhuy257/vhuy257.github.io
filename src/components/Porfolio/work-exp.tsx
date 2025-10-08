@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 
 import { Badge } from "@/components/ui/badge";
@@ -28,19 +30,23 @@ const WorkExp = () => {
                   <Badge variant="outline">{k.companyName}</Badge>
                 </h1>
                 <h2>
-                  <Badge variant="default" className="bg-red-500 border-red-500 text-white">{k.position}</Badge>
+                  <Badge
+                    variant="default"
+                    className="bg-red-500 border-red-500 text-white"
+                  >
+                    {k.position}
+                  </Badge>
                 </h2>
               </div>
               <div className="job-description">
                 <ul className="list-disc pl-5 mt-4 space-y-1">
-                  {k?.description?.map((k: any, keyItem: number) => (
-                    <li key={keyItem}>
-                      <div
-                        className="content"
-                        dangerouslySetInnerHTML={{ __html: k }}
-                      ></div>
-                    </li>
-                  ))}
+                  {k?.description?.map((k: any, keyItem: number) => {
+                    return (
+                      <li key={keyItem}>
+                        <div className="content">{k}</div>
+                      </li>
+                    );
+                  })}
                 </ul>
               </div>
             </div>

@@ -6,9 +6,13 @@ import { Button } from "../ui/button";
 import { Icon } from "@iconify/react";
 
 const Project = () => {
-  const handleViewProject = (demoLink: string) => {
+  const handleViewProject = (demoLink: string, techLink: string) => {
     if (demoLink && demoLink !== "#") {
       window.open(demoLink, '_blank');
+    }
+
+    if (techLink && techLink !== "#") {
+      window.open(techLink, '_blank');
     }
   };
 
@@ -26,9 +30,15 @@ const Project = () => {
               className="object-contain object-top rounded-md w-full h-full transition-all duration-300"
             />
 
+            {k?.techLink && (
+              <div className="absolute top-2 right-2 bg-gradient-to-r from-purple-600 to-pink-600 text-white text-xs font-semibold px-3 py-1 rounded-full shadow-lg z-10">
+                Tech Tricky
+              </div>
+            )}
+
             <div className="absolute inset-0 opacity-0 group-hover:opacity-100  transition-all duration-300 flex items-center justify-center rounded-md">
               <Button
-                onClick={() => handleViewProject(k.demoLink)}
+                onClick={() => handleViewProject(k.demoLink, k.techLink)}
                 className="opacity-0 group-hover:opacity-100 border-none transform translate-y-4 group-hover:translate-y-0 transition-all duration-300 bg-white text-black px-6 py-3 rounded-full font-medium hover:bg-gray-100 hover:scale-105 transition-transform duration-200"
                 size="sm"
                 variant={"default"}

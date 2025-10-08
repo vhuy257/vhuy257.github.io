@@ -67,21 +67,10 @@ export const projectsData = [
     demoLink: "/coffee-shop",
   },
   {
-    imageUrl: "/slider-3.jpg",
-    demoLink: "/basilico",
+    imageUrl: "/css-tricky.png",
+    techLink: "https://developer.chrome.com/docs/css-ui/animate-to-height-auto",
+    techName: "Animate to height: auto; (and other intrinsic sizing keywords) in CSS",
   },
-  // {
-  //   imageUrl: "/slider-4.jpg",
-  //   demoLink: "/basilico",
-  // },
-  // {
-  //   imageUrl: "/slider-5.jpg",
-  //   demoLink: "/basilico",
-  // },
-  // {
-  //   imageUrl: "/slider-6.jpg",
-  //   demoLink: "/basilico",
-  // },
 ];
 
 export const skillsData = new Map([
