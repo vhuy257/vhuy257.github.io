@@ -67,10 +67,19 @@ export const projectsData = [
     demoLink: "/coffee-shop",
   },
   {
+    imageUrl: "/slider-8.png",
+    demoLink: "/basilico/sushi",
+  },
+  {
     imageUrl: "/css-tricky.png",
     techLink: "https://developer.chrome.com/docs/css-ui/animate-to-height-auto",
     techName: "Animate to height: auto; (and other intrinsic sizing keywords) in CSS",
   },
+  {
+    imageUrl: "/tech-trick-2.png",
+    techLink: "https://dev.to/hijazi313/using-dangerouslysetinnerhtml-safely-in-react-and-nextjs-production-systems-115n?utm_source=zalo&utm_medium=zalo&utm_campaign=zalo",
+    techName: "Using dangerouslySetInnerHTML Safely in React and Next.js Production Systems",
+  }
 ];
 
 export const skillsData = new Map([
