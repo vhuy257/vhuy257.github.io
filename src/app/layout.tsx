@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import SmoothScrolling from "../components/SmoothScrolling/SmoothScrolling";
 import { ThemeProvider } from "../contexts/ThemeContext";
 import { TooltipProvider } from "../components/animate-ui/primitives/animate/tooltip";
+import { Toaster } from "../components/ui/sooner";
 import { Lexend } from "next/font/google";
 const lexend = Lexend({ subsets: ["latin"], weight: "400" });
 
@@ -42,6 +43,7 @@ export default function RootLayout({
             <SmoothScrolling>{children}</SmoothScrolling>
           </TooltipProvider>
         </ThemeProvider>
+        <Toaster richColors position="top-center" />
       </body>
     </html>
   );

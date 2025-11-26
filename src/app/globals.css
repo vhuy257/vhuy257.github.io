@@ -34,6 +34,7 @@
   --sidebar-accent-foreground: oklch(0.21 0.006 285.885);
   --sidebar-border: oklch(0.92 0.004 286.32);
   --sidebar-ring: oklch(0.623 0.214 259.815);
+  --input: oklch(0.92 0.004 286.32);
 }
 
 .dark {
@@ -68,10 +69,21 @@
   --sidebar-accent-foreground: oklch(0.985 0 0);
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.488 0.243 264.376);
-
-  body {
-    background-color: var(--background);
-    color: var(--foreground);
-  }
+  --input: oklch(0.92 0.004 286.32);
 }
 
+@theme inline {
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.141 0.005 285.823);
+  --input: oklch(0.92 0.004 286.32);
+}
+
+/* Sonner Toast Font Family */
+[data-sonner-toast] {
+  font-family: 'Lexend', sans-serif !important;
+}
+
+[data-sonner-toast] [data-title],
+[data-sonner-toast] [data-description] {
+  font-family: 'Lexend', sans-serif !important;
+}
