@@ -35,7 +35,7 @@ export default function Profile() {
               pauseDuration={1500}
               showCursor={true}
               cursorCharacter="|"
-              className={`text-md md:text-3xl text-gray-700 w-full block`}
+              className={`text-md md:text-3xl dark:text-gray-300 w-full block`}
               textColors={["text-gray-700"] as never}
               onSentenceComplete={handleAnimationComplete}
               variableSpeed={undefined}

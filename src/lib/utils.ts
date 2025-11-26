@@ -79,12 +79,18 @@ export const projectsData = [
     imageUrl: "/tech-trick-2.png",
     techLink: "https://dev.to/hijazi313/using-dangerouslysetinnerhtml-safely-in-react-and-nextjs-production-systems-115n?utm_source=zalo&utm_medium=zalo&utm_campaign=zalo",
     techName: "Using dangerouslySetInnerHTML Safely in React and Next.js Production Systems",
+  },
+  {
+    imageUrl: "/saas-template.png",
+    techLink: "https://saas-template.vhuy2571990.workers.dev",
+    techName: "Mediacare-Saas Template",
   }
 ];
 
 export const skillsData = new Map([
   ["React", "/react.svg"],
   ["Next.js", "/next.svg"],
+  ["Vite", "/vite.svg"],
   ["TypeScript", "/ts.svg"],
   ["JavaScript", "/js.svg"],
   ["Zustand", "/zustand.svg"],

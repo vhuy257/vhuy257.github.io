@@ -21,7 +21,7 @@ const Project = () => {
       <h2 className="text-left text-3xl font-medium">Collections</h2>
       <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 mt-10 gap-8">
         {projectsData?.map((k: any, index: number) => (
-          <div className="item shadow-lg rounded-md hover:translate-y-[-10px] transition-all duration-300 max-h-[300px] overflow-hidden relative group" key={index}>
+          <div className="item shadow-lg dark:bg-white dark:shadow-2xl rounded-md hover:translate-y-[-10px] transition-all duration-300 max-h-[300px] overflow-hidden relative group" key={index}>
             <Image
               src={k?.imageUrl}
               alt="Project Image"
