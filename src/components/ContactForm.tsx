@@ -134,8 +134,8 @@ export default function ContactForm() {
           <div className="mt-8 pt-8 border-t border-border/20">
             <p className="text-center text-sm text-muted-foreground">
               Prefer email? Reach me directly at{' '}
-              <a href="mailto:your@email.com" className="text-primary hover:underline font-medium">
-                your@email.com
+              <a href="mailto:vhuy2571990@gmail.com" className="text-primary hover:underline font-medium">
+                vhuy2571990@gmail.com
               </a>
             </p>
           </div>
