@@ -18,7 +18,7 @@ export function ThemeToggle() {
       <Button
         variant="outline"
         size="icon"
-        className="relative h-10 w-10 rounded-full border border-gray-500/20 bg-background/80 backdrop-blur-sm"
+        className="relative h-10 w-10 rounded-full border border-gray-500/20 backdrop-blur-sm"
         aria-label="Toggle theme"
         disabled
       >
@@ -32,12 +32,11 @@ export function ThemeToggle() {
       variant="outline"
       size="icon"
       onClick={toggleTheme}
-      className="relative h-10 w-10 rounded-full border border-gray-500/20 bg-background/80 backdrop-blur-sm transition-all duration-100 ease-in-out
-                 hover:border-gray-500/60"
+      className="relative h-10 w-10 rounded-full border border-gray-500/20backdrop-blur-sm transition-all duration-100 ease-in-out"
       aria-label="Toggle theme"
     >
-      <Sun className={`h-5 w-5 ${theme === 'dark' ? 'scale-0' : 'scale-100'}`} />
-      <Moon className={`absolute h-5 w-5 ${theme === 'dark' ? 'scale-100' : 'scale-0'}`} />
+      <Sun className={`h-5 w-5 transition-all border-input duration-300 ${theme === 'dark' ? '-rotate-90 scale-0 text-white' : 'rotate-0 scale-100'}`} />
+      <Moon className={`absolute h-5 w-5 transition-all border-input duration-300 ${theme === 'dark' ? 'rotate-0 scale-100 text-white' : 'rotate-90 scale-0'}`} />
     </Button>
   );
 }

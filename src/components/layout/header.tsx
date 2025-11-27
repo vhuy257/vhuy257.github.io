@@ -4,8 +4,12 @@ import Link from "next/link";
 import { Icon } from "@iconify/react";
 import { ThemeToggle } from "../ui/theme-toggle";
 import { Tooltip, TooltipTrigger, TooltipContent, TooltipArrow } from "../animate-ui/primitives/animate/tooltip";
+import { useTheme } from "@/contexts/ThemeContext";
 
 const HeaderSocialIcon = () => {
+  const { theme } = useTheme();
+
+  const iconColor = theme === 'dark' ? 'text-white' : 'text-black';
   return (
     <div className="flex justify-between items-center container max-w-6xl mx-auto my-4">
       <div className="flex items-center gap-4 px-4">
@@ -16,7 +20,7 @@ const HeaderSocialIcon = () => {
                 icon="iconoir:linkedin"
                 width={30}
                 height={30}
-                className="hover:text-blue-600 transition-colors duration-200"
+                className={`hover:text-blue-600 transition-colors duration-20 ${iconColor}`}
               />
             </Link>
           </TooltipTrigger>
@@ -31,11 +35,11 @@ const HeaderSocialIcon = () => {
                 icon="material-symbols-light:alternate-email"
                 width={30}
                 height={30}
-                className="hover:text-blue-500 transition-colors duration-200"
+                className={`hover:text-blue-500 transition-colors duration-20 ${iconColor}`}
               />
             </Link>
           </TooltipTrigger>
-          <TooltipContent className="bg-gray-900 dark:bg-gray-100 text-white dark:text-gray-900 p-2 text-xs rounded-md shadow-lg border">
+          <TooltipContent className="bg-gray-900 dark:bg-gray-100 text-white p-2 text-xs rounded-md shadow-lg border">
             Email Me
           </TooltipContent>
         </Tooltip>
@@ -46,7 +50,7 @@ const HeaderSocialIcon = () => {
                 icon="mdi:github"
                 width={30}
                 height={30}
-                className="hover:text-blue-500 dark:hover:text-gray-300 transition-colors duration-200"
+                className={`dark:text-white hover:text-blue-500 transition-colors duration-20 ${iconColor}`}
               />
             </Link>
           </TooltipTrigger>
@@ -55,7 +59,7 @@ const HeaderSocialIcon = () => {
           </TooltipContent>
         </Tooltip>
       </div>
-      <div className="flex items-center gap-4 px-4">
+      <div className="flex items-center gap-4 px-4 bg-background">
         <ThemeToggle />
       </div>
     </div>

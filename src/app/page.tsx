@@ -9,7 +9,7 @@ export default function Home() {
     <>
       <HeaderSocialIcon />
 
-      <main className="flex min-h-screen flex-col items-center justify-between bg-background text-foreground transition-colors duration-300">
+      <main className="flex min-h-screen flex-col items-center justify-between text-foreground transition-colors duration-300">
         <Profile />
         <WorkExp />
         <Projects />

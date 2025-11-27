@@ -37,7 +37,7 @@ export default function RootLayout({
         <title>Huy Nguyễn — Frontend Developer</title>
         <meta name="description" content="Personal official porfolio website" />
       </head>
-      <body className={`${lexend.className}`}>
+      <body className={`${lexend.className} bg-background`}>
         <ThemeProvider>
           <TooltipProvider>
             <SmoothScrolling>{children}</SmoothScrolling>

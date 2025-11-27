@@ -81,9 +81,12 @@ export const projectsData = [
     techName: "Using dangerouslySetInnerHTML Safely in React and Next.js Production Systems",
   },
   {
+    imageUrl: "/all_svg_icons.png",
+    demoLink: "https://allsvgicons.com/",
+  },
+  {
     imageUrl: "/saas-template.png",
-    techLink: "https://saas-template.vhuy2571990.workers.dev",
-    techName: "Mediacare-Saas Template",
+    demoLink: "https://saas-template.vhuy2571990.workers.dev",
   }
 ];
 

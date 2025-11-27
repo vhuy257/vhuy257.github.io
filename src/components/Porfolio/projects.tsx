@@ -27,7 +27,7 @@ const Project = () => {
               alt="Project Image"
               width={1769}
               height={679}
-              className="object-contain object-top rounded-md w-full h-full transition-all duration-300"
+              className="object-contain object-center rounded-md w-full h-full transition-all duration-300"
             />
 
             {k?.techLink && (
