@@ -5,7 +5,10 @@ export const CVDownload = () => {
   return (
     <div className="mt-10 flex gap-4">
       <Button variant="link" size="lg" onClick={() => {
-        window.open("https://drive.google.com/file/d/15qaUgQigzNs5ph8dkH8s8vFJXDCdABcz/view", "_blank");
+        const contactForm = document.getElementById('contact-form');
+        if (contactForm) {
+          contactForm.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
       }}>
         <Icon icon="radix-icons:download"/>
         View My CV
