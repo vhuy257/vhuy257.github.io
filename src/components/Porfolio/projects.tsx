@@ -96,7 +96,7 @@ const Project = () => {
           return (
             <article
               key={`${project.title}-${index}`}
-              className="group relative flex flex-col overflow-hidden rounded-lg border border-border/60 bg-card shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md"
+              className="group relative flex flex-col overflow-hidden rounded-lg border border-border/60 bg-card transition-all duration-300 hover:-translate-y-1"
             >
               <div className="relative aspect-[16/10] overflow-hidden bg-muted/40">
                 <Image
@@ -110,7 +110,7 @@ const Project = () => {
 
                 <span
                   className={cn(
-                    "absolute left-3 top-3 inline-flex items-center gap-1 rounded-md border px-2 py-1 text-[11px] font-medium shadow-sm backdrop-blur-sm",
+                    "absolute left-3 top-3 inline-flex items-center gap-1 rounded-md border px-2 py-1 text-[11px] font-medium backdrop-blur-sm",
                     meta.className
                   )}
                 >
