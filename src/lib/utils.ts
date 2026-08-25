@@ -53,41 +53,89 @@ export const workExpsData = [
   },
 ];
 
+export type ProjectCategory = "web-template" | "cms-dashboard" | "technical-tips";
+
+export const projectCategoryMeta: Record<
+  ProjectCategory,
+  { label: string; icon: string; className: string }
+> = {
+  "web-template": {
+    label: "Web Template",
+    icon: "mdi:web",
+    className:
+      "bg-sky-500/90 text-white border-sky-500/20",
+  },
+  "cms-dashboard": {
+    label: "CMS Dashboard",
+    icon: "mdi:view-dashboard-outline",
+    className:
+      "bg-emerald-600/90 text-white border-emerald-600/20",
+  },
+  "technical-tips": {
+    label: "Technical Tips",
+    icon: "mdi:lightbulb-on-outline",
+    className:
+      "bg-amber-500/90 text-white border-amber-500/20",
+  },
+};
+
 export const projectsData = [
   {
+    title: "Basilico Home",
     imageUrl: "/slider-7.png",
     demoLink: "/basilico",
+    category: "web-template" as ProjectCategory,
   },
   {
+    title: "Basilico About",
     imageUrl: "/slider-1.jpg",
     demoLink: "/basilico/about",
+    category: "web-template" as ProjectCategory,
   },
   {
+    title: "Coffee Shop",
     imageUrl: "/slider-2.jpg",
     demoLink: "/coffee-shop",
+    category: "web-template" as ProjectCategory,
   },
   {
+    title: "Basilico Sushi",
     imageUrl: "/slider-8.png",
     demoLink: "/basilico/sushi",
+    category: "web-template" as ProjectCategory,
   },
   {
+    title: "Animate to height: auto",
     imageUrl: "/css-tricky.png",
     techLink: "https://developer.chrome.com/docs/css-ui/animate-to-height-auto",
     techName: "Animate to height: auto; (and other intrinsic sizing keywords) in CSS",
+    category: "technical-tips" as ProjectCategory,
   },
   {
+    title: "Safe dangerouslySetInnerHTML",
     imageUrl: "/tech-trick-2.png",
     techLink: "https://dev.to/hijazi313/using-dangerouslysetinnerhtml-safely-in-react-and-nextjs-production-systems-115n?utm_source=zalo&utm_medium=zalo&utm_campaign=zalo",
     techName: "Using dangerouslySetInnerHTML Safely in React and Next.js Production Systems",
+    category: "technical-tips" as ProjectCategory,
   },
   {
+    title: "All SVG Icons",
     imageUrl: "/all_svg_icons.png",
     demoLink: "https://allsvgicons.com/",
+    category: "web-template" as ProjectCategory,
   },
   {
+    title: "SaaS Admin Template",
     imageUrl: "/saas-template.png",
     demoLink: "https://saas-template.vhuy2571990.workers.dev",
-  }
+    category: "cms-dashboard" as ProjectCategory,
+  },
+  {
+    title: "SmileCare Dental CMS",
+    imageUrl: "/dental-dashboard.png",
+    demoLink: "https://dental-fe.vhuy2571990.workers.dev/dashboard",
+    category: "cms-dashboard" as ProjectCategory,
+  },
 ];
 
 export const skillsData = new Map([

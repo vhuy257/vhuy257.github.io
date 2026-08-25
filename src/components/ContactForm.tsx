@@ -1,15 +1,44 @@
 'use client';
 import React, { useEffect } from 'react';
+import Link from 'next/link';
 import { useForm, ValidationError } from '@formspree/react';
-import { Input } from './ui/input';
-import { Textarea } from './ui/textarea';
 import { Button } from './ui/button';
 import { toast } from 'sonner';
 import { Spinner } from './ui/spinner';
-import { Send } from 'lucide-react';
+import { Icon } from '@iconify/react';
+import { cn } from '@/lib/utils';
+
+const contactChannels = [
+  {
+    label: 'Email',
+    value: 'vhuy2571990@gmail.com',
+    href: 'mailto:vhuy2571990@gmail.com',
+    icon: 'material-symbols-light:alternate-email',
+  },
+  {
+    label: 'LinkedIn',
+    value: 'linkedin.com/in/huy-nguyen',
+    href: 'https://www.linkedin.com/in/huy-nguyen-3b67b0173/',
+    icon: 'iconoir:linkedin',
+  },
+  {
+    label: 'GitHub',
+    value: 'github.com/vhuy257',
+    href: 'https://github.com/vhuy257',
+    icon: 'mdi:github',
+  },
+];
+
+const fieldClass = cn(
+  'peer w-full bg-transparent border-0 border-b border-border/80 rounded-none px-0 py-3',
+  'text-base md:text-sm text-foreground placeholder:text-muted-foreground/70',
+  'outline-none transition-[border-color,box-shadow] duration-200',
+  'focus:border-blue-500 focus:ring-0',
+  'disabled:cursor-not-allowed disabled:opacity-50'
+);
 
 export default function ContactForm() {
-  const [state, handleSubmit] = useForm("manzzjlk");
+  const [state, handleSubmit] = useForm('manzzjlk');
   const formRef = React.useRef<HTMLFormElement>(null);
 
   useEffect(() => {
@@ -17,48 +46,91 @@ export default function ContactForm() {
       toast.success('Thanks for reaching out!', {
         description: "I'll get back to you soon.",
       });
-      // Reset form after successful submission
       formRef.current?.reset();
     }
   }, [state.succeeded]);
 
   return (
-    <section id="contact-form" className="templates container max-w-6xl py-16 px-4">
-      <div className="text-center mb-16">
-        <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-primary to-purple-600 bg-clip-text text-transparent">
-          Let's Connect
-        </h2>
-        <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-          Have a project in mind or just want to chat? Drop me a message and I'll get back to you as soon as possible.
-        </p>
-      </div>
+    <section id="contact-form" className="container max-w-6xl py-16 px-4">
+      <div className="relative overflow-hidden rounded-2xl border border-border/60 bg-muted/30 dark:bg-muted/15">
+        <div
+          aria-hidden
+          className="pointer-events-none absolute inset-y-0 left-0 w-1 bg-blue-500"
+        />
+        <div
+          aria-hidden
+          className="pointer-events-none absolute -right-24 -top-24 size-72 rounded-full bg-blue-500/10 blur-3xl"
+        />
+        <div
+          aria-hidden
+          className="pointer-events-none absolute -bottom-28 -left-16 size-64 rounded-full bg-sky-400/10 blur-3xl"
+        />
 
-      <div className="max-w-2xl mx-auto">
-        {/* Decorative gradient background */}
-        <div className="absolute inset-0 -z-10 overflow-hidden pointer-events-none">
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-primary/10 rounded-full blur-3xl" />
-        </div>
+        <div className="relative grid gap-10 p-6 md:p-10 lg:grid-cols-2 lg:gap-16 lg:p-12">
+          <div className="flex flex-col justify-between gap-10">
+            <div>
+              <h2 className="text-3xl md:text-4xl font-medium tracking-tight">
+                Let&apos;s connect
+              </h2>
+              <p className="mt-4 max-w-sm text-muted-foreground leading-relaxed">
+                Have a project in mind or just want to chat? Drop a note and I will reply as soon as I can.
+              </p>
+            </div>
 
-        {/* Main form card */}
-        <div className="relative backdrop-blur-sm bg-card/50 border border-border/20 rounded-2xl p-8 md:p-12 shadow-2xl">
-          {/* Decorative corner accent */}
-          <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-primary/20 to-purple-600/20 rounded-bl-full blur-2xl -z-10" />
-          <div className="absolute bottom-0 left-0 w-32 h-32 bg-gradient-to-tr from-primary/20 to-blue-600/20 rounded-tr-full blur-2xl -z-10" />
+            <div className="space-y-5">
+              <p className="text-xs font-medium uppercase tracking-[0.18em] text-muted-foreground">
+                Reach me directly
+              </p>
+              <ul className="space-y-4">
+                {contactChannels.map((channel) => (
+                  <li key={channel.label}>
+                    <Link
+                      href={channel.href}
+                      target={channel.href.startsWith('http') ? '_blank' : undefined}
+                      rel={
+                        channel.href.startsWith('http')
+                          ? 'noopener noreferrer'
+                          : undefined
+                      }
+                      className="group inline-flex items-center gap-3 text-sm transition-colors hover:text-blue-500"
+                    >
+                      <span className="flex size-9 items-center justify-center rounded-full border border-border/70 bg-background/80 text-foreground transition-colors group-hover:border-blue-500 group-hover:text-blue-500">
+                        <Icon icon={channel.icon} width={18} height={18} />
+                      </span>
+                      <span>
+                        <span className="block text-[11px] uppercase tracking-wider text-muted-foreground">
+                          {channel.label}
+                        </span>
+                        <span className="font-medium underline-offset-4 group-hover:underline">
+                          {channel.value}
+                        </span>
+                      </span>
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
 
-          <form ref={formRef} onSubmit={handleSubmit} className="space-y-6">
-            {/* Name and Email in a grid on larger screens */}
-            <div className="grid md:grid-cols-2 gap-6">
-              <div className="space-y-2">
-                <label htmlFor="name" className="text-sm font-semibold text-foreground flex items-center gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-primary" />
-                  Your Name
+          <form
+            ref={formRef}
+            onSubmit={handleSubmit}
+            className="flex flex-col gap-7 rounded-xl bg-background/80 p-5 backdrop-blur-sm md:p-7 dark:bg-background/50"
+          >
+            <div className="grid gap-7 sm:grid-cols-2">
+              <div className="space-y-1">
+                <label
+                  htmlFor="name"
+                  className="text-xs font-medium uppercase tracking-[0.14em] text-muted-foreground"
+                >
+                  Name
                 </label>
-                <Input
+                <input
                   id="name"
                   type="text"
                   name="name"
-                  placeholder="John Doe"
-                  className="transition-all duration-300 focus:scale-[1.02]"
+                  placeholder="Your name"
+                  className={fieldClass}
                   required
                 />
                 <ValidationError
@@ -68,17 +140,19 @@ export default function ContactForm() {
                 />
               </div>
 
-              <div className="space-y-2">
-                <label htmlFor="email" className="text-sm font-semibold text-foreground flex items-center gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-primary" />
-                  Email Address
+              <div className="space-y-1">
+                <label
+                  htmlFor="email"
+                  className="text-xs font-medium uppercase tracking-[0.14em] text-muted-foreground"
+                >
+                  Email
                 </label>
-                <Input
+                <input
                   id="email"
                   type="email"
                   name="email"
-                  placeholder="john@example.com"
-                  className="transition-all duration-300 focus:scale-[1.02]"
+                  placeholder="you@example.com"
+                  className={fieldClass}
                   required
                 />
                 <ValidationError
@@ -89,18 +163,19 @@ export default function ContactForm() {
               </div>
             </div>
 
-            {/* Message field */}
-            <div className="space-y-2">
-              <label htmlFor="message" className="text-sm font-semibold text-foreground flex items-center gap-2">
-                <span className="w-1.5 h-1.5 rounded-full bg-primary" />
-                Your Message
+            <div className="space-y-1">
+              <label
+                htmlFor="message"
+                className="text-xs font-medium uppercase tracking-[0.14em] text-muted-foreground"
+              >
+                Message
               </label>
-              <Textarea
+              <textarea
                 id="message"
                 name="message"
-                placeholder="Tell me about your project or just say hi..."
-                rows={6}
-                className="transition-all duration-300 focus:scale-[1.01] resize-none"
+                placeholder="Tell me about your idea..."
+                rows={5}
+                className={cn(fieldClass, 'min-h-[120px] resize-none')}
                 required
               />
               <ValidationError
@@ -110,35 +185,29 @@ export default function ContactForm() {
               />
             </div>
 
-            {/* Submit button with gradient */}
-            <Button
-              type="submit"
-              disabled={state.submitting}
-              className="w-full h-12 text-base font-semibold bg-gradient-to-r from-primary to-purple-600 hover:from-primary/90 hover:to-purple-600/90 transition-all duration-300 hover:scale-[1.02] hover:shadow-lg"
-            >
-              {state.submitting ? (
-                <>
-                  <Spinner className="mr-2" />
-                  Sending...
-                </>
-              ) : (
-                <>
-                  Send Message
-                  <Send className="ml-2 size-4" />
-                </>
-              )}
-            </Button>
+            <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between pt-1">
+              <p className="text-xs text-muted-foreground order-2 sm:order-1">
+                Usually replies within a day.
+              </p>
+              <Button
+                type="submit"
+                disabled={state.submitting}
+                className="order-1 sm:order-2 h-11 min-w-[160px] rounded-full px-6 text-sm font-medium"
+              >
+                {state.submitting ? (
+                  <>
+                    <Spinner className="mr-2" />
+                    Sending...
+                  </>
+                ) : (
+                  <>
+                    Send message
+                    <Icon icon="mdi:arrow-right" width={18} height={18} />
+                  </>
+                )}
+              </Button>
+            </div>
           </form>
-
-          {/* Contact info or social links could go here */}
-          <div className="mt-8 pt-8 border-t border-border/20">
-            <p className="text-center text-sm text-muted-foreground">
-              Prefer email? Reach me directly at{' '}
-              <a href="mailto:vhuy2571990@gmail.com" className="text-primary hover:underline font-medium">
-                vhuy2571990@gmail.com
-              </a>
-            </p>
-          </div>
         </div>
       </div>
     </section>
