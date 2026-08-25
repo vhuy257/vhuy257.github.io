@@ -2,6 +2,7 @@ import Profile from "@/components/Porfolio/profile";
 import WorkExp from "@/components/Porfolio/work-exp";
 import Projects from "@/components/Porfolio/projects";
 import HeaderSocialIcon from "@/components/layout/header";
+import ScrollToTop from "@/components/layout/scroll-to-top";
 import ContactForm from "@/components/ContactForm";
 
 export default function Home() {
@@ -15,6 +16,8 @@ export default function Home() {
         <Projects />
         <ContactForm />
       </main>
+
+      <ScrollToTop />
     </>
   );
 }

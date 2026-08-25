@@ -11,7 +11,7 @@ export default function Profile() {
   };
 
   return (
-    <section className="logo pb-0 text-center mt-10 container md:max-w-6xl px-4">
+    <section id="about" className="logo pb-0 text-center mt-10 container md:max-w-6xl px-4 scroll-mt-24">
       <div className="w-full flex flex-wrap-reverse sm:flex-nowrap justify-between md:justify-between gap-8 mx-auto items-center">
         <div className="left-content text-left col-span-3">
           <SplitText

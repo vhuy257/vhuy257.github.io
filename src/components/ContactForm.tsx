@@ -51,7 +51,7 @@ export default function ContactForm() {
   }, [state.succeeded]);
 
   return (
-    <section id="contact-form" className="container max-w-6xl py-16 px-4">
+    <section id="contact" className="container max-w-6xl py-16 px-4 scroll-mt-24">
       <div className="relative overflow-hidden rounded-2xl border border-border/60 bg-muted/30 dark:bg-muted/15">
         <div
           aria-hidden

@@ -8,7 +8,7 @@ import { Icon } from "@iconify/react";
 
 const WorkExp = () => {
   return (
-    <section className="container md:max-w-6xl px-4 mt-20">
+    <section id="experience" className="container md:max-w-6xl px-4 mt-20 scroll-mt-24">
       <h2 className="text-left text-3xl font-medium">Work Experiences</h2>
       <div className="mx-auto antialiased pt-4 relative">
         {workExpsData?.map((k: any, keyItem: number) => (
