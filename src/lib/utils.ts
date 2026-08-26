@@ -87,9 +87,9 @@ export const projectsData = [
     category: "web-template" as ProjectCategory,
   },
   {
-    title: "Basilico About",
-    imageUrl: "/slider-1.jpg",
-    demoLink: "/basilico/about",
+    title: "Positivus Landing Page",
+    imageUrl: "/positivus.png",
+    demoLink: "https://vhuy257.github.io/positivus/",
     category: "web-template" as ProjectCategory,
   },
   {
