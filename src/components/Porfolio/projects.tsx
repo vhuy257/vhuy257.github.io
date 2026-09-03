@@ -1,12 +1,12 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import { projectsData } from "@/lib/utils";
 import { ProjectGrid } from "./project-card";
 import { ProjectFilters, ViewAllLink } from "./project-filters";
 import {
   PREVIEW_LIMIT,
   PROJECT_CATEGORIES,
+  visibleProjectsData,
   type FilterKey,
 } from "@/lib/projects";
 
@@ -16,13 +16,13 @@ const Project = () => {
   const previewProjects = useMemo(() => {
     if (filter === "all") {
       return PROJECT_CATEGORIES.flatMap((category) =>
-        projectsData
+        visibleProjectsData
           .filter((item) => item.category === category)
           .slice(0, PREVIEW_LIMIT)
       );
     }
 
-    return projectsData
+    return visibleProjectsData
       .filter((item) => item.category === filter)
       .slice(0, PREVIEW_LIMIT);
   }, [filter]);
@@ -31,13 +31,13 @@ const Project = () => {
     if (filter === "all") {
       return PROJECT_CATEGORIES.some(
         (category) =>
-          projectsData.filter((item) => item.category === category).length >
-          PREVIEW_LIMIT
+          visibleProjectsData.filter((item) => item.category === category)
+            .length > PREVIEW_LIMIT
       );
     }
 
     return (
-      projectsData.filter((item) => item.category === filter).length >
+      visibleProjectsData.filter((item) => item.category === filter).length >
       PREVIEW_LIMIT
     );
   }, [filter]);
@@ -51,7 +51,7 @@ const Project = () => {
         <div>
           <h2 className="text-left text-3xl font-medium">Collections</h2>
           <p className="mt-2 text-sm text-muted-foreground max-w-xl">
-            Browse by type: web templates, CMS dashboards, and technical tips.
+            Browse by type: web templates and CMS dashboards.
           </p>
         </div>
         {hasMore && (

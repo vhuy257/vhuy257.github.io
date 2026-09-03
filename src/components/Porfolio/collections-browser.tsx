@@ -4,13 +4,16 @@ import { useMemo, useState } from "react";
 import Link from "next/link";
 import { Icon } from "@iconify/react";
 import {
-  projectsData,
   projectCategoryMeta,
   type ProjectCategory,
 } from "@/lib/utils";
 import { ProjectGrid } from "@/components/Porfolio/project-card";
 import { ProjectFilters } from "@/components/Porfolio/project-filters";
-import { isProjectCategory, type FilterKey } from "@/lib/projects";
+import {
+  isProjectCategory,
+  visibleProjectsData,
+  type FilterKey,
+} from "@/lib/projects";
 
 type CollectionsBrowserProps = {
   initialCategory?: string;
@@ -27,8 +30,8 @@ export default function CollectionsBrowser({
   const [filter, setFilter] = useState<FilterKey>(startingFilter);
 
   const filteredProjects = useMemo(() => {
-    if (filter === "all") return projectsData;
-    return projectsData.filter((item) => item.category === filter);
+    if (filter === "all") return visibleProjectsData;
+    return visibleProjectsData.filter((item) => item.category === filter);
   }, [filter]);
 
   const title =
@@ -51,7 +54,7 @@ export default function CollectionsBrowser({
           {title}
         </h1>
         <p className="mt-2 text-sm text-muted-foreground max-w-xl">
-          Full list of web templates, CMS dashboards, and technical tips.
+          Full list of web templates and CMS dashboards.
         </p>
       </div>
 

@@ -9,14 +9,14 @@ export const CVDownload = () => {
 
   return (
     <div className="mt-10 flex gap-4">
-      <Button
+      {/* <Button
         variant="link"
         size="lg"
         onClick={() => scrollTo("#contact")}
       >
         <Icon icon="radix-icons:download" />
         View My CV
-      </Button>
+      </Button> */}
       <Button
         variant="default"
         size="lg"
