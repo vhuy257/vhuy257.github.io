@@ -1,0 +1,144 @@
+{
+  "tool": "build-phase",
+  "version": 2,
+  "startedAt": "2026-09-06T08:33:39.787Z",
+  "comp": ".impeccable/mocks/home-zine-b-comic-stack.png",
+  "direction": "hand-drawn-zine-explainer",
+  "breakpoint": "1536x1024",
+  "artifact": null,
+  "phase": "hero",
+  "phases": {
+    "comps": {
+      "status": "closed",
+      "openedAt": "2026-09-06T08:33:39.787Z",
+      "closedAt": "2026-09-06T08:39:14.194Z",
+      "attempts": 2,
+      "notes": [],
+      "gate": {
+        "ok": true,
+        "reasons": [],
+        "summary": "3 comps, 1 approved",
+        "approved": ".impeccable/mocks/home-zine-b-comic-stack.png",
+        "at": "2026-09-06T08:39:14.194Z"
+      },
+      "forced": null
+    },
+    "spec": {
+      "status": "closed",
+      "openedAt": "2026-09-06T08:39:14.213Z",
+      "closedAt": "2026-09-06T08:44:20.173Z",
+      "attempts": 4,
+      "notes": [],
+      "gate": {
+        "ok": true,
+        "reasons": [],
+        "summary": "26 regions, 6 plates, 13 text regions measured",
+        "at": "2026-09-06T08:44:20.173Z"
+      },
+      "forced": null
+    },
+    "plates": {
+      "status": "closed",
+      "openedAt": "2026-09-06T08:44:20.173Z",
+      "closedAt": "2026-09-06T08:53:41.797Z",
+      "attempts": 6,
+      "notes": [],
+      "gate": {
+        "ok": true,
+        "reasons": [],
+        "summary": "6/6 plates",
+        "at": "2026-09-06T08:53:41.797Z"
+      },
+      "forced": null
+    },
+    "hero": {
+      "status": "open",
+      "openedAt": "2026-09-06T08:53:41.797Z",
+      "closedAt": null,
+      "attempts": 1,
+      "notes": [
+        {
+          "at": "2026-09-06T09:02:44.217Z",
+          "text": "Hero/section build uses Marker Zine comic-stack composition with real PRODUCT facts (employers/projects/copy) instead of fantasy labels from the decision comp."
+        }
+      ],
+      "gate": {
+        "ok": false,
+        "reasons": [
+          "no hero capture at .impeccable/review/hero-repro.png: screenshot the first viewport at the comp's own dimensions (1536x1024) into that path"
+        ],
+        "at": "2026-09-06T09:02:44.296Z"
+      },
+      "forced": null
+    },
+    "sections": {
+      "status": "pending",
+      "openedAt": null,
+      "closedAt": null,
+      "attempts": 0,
+      "notes": [],
+      "gate": null,
+      "forced": null
+    },
+    "motion": {
+      "status": "pending",
+      "openedAt": null,
+      "closedAt": null,
+      "attempts": 0,
+      "notes": [],
+      "gate": null,
+      "forced": null
+    },
+    "responsive": {
+      "status": "pending",
+      "openedAt": null,
+      "closedAt": null,
+      "attempts": 0,
+      "notes": [],
+      "gate": null,
+      "forced": null
+    },
+    "review": {
+      "status": "pending",
+      "openedAt": null,
+      "closedAt": null,
+      "attempts": 0,
+      "notes": [],
+      "gate": null,
+      "forced": null
+    }
+  },
+  "finish": null,
+  "plates": {
+    "paper-swatch": {
+      "status": "ok",
+      "score": 0.4789,
+      "size": "616x408"
+    },
+    "hero-portrait": {
+      "status": "ok",
+      "score": 0.4733,
+      "size": "1536x1024"
+    },
+    "hero-bubble": {
+      "status": "ok",
+      "score": 0.4254,
+      "size": "1536x1024"
+    },
+    "proj-1-art": {
+      "status": "ok",
+      "score": 0.6831,
+      "size": "1536x1024"
+    },
+    "proj-2-art": {
+      "status": "ok",
+      "score": 0.7057,
+      "size": "1536x1024"
+    },
+    "proj-3-art": {
+      "status": "ok",
+      "score": 0.8673,
+      "size": "922x614"
+    }
+  }
+}

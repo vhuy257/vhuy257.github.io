@@ -1,0 +1,30 @@
+{
+  "regions": [
+    { "id": "paper-swatch", "kind": "texture", "grid": "I1:I1", "note": "clean cream paper grain with no ink" },
+    { "id": "nav-mark", "kind": "text", "grid": "A0:B0", "note": "HN. marker logo" },
+    { "id": "nav-links", "kind": "chrome", "grid": "C0:G0", "note": "section nav links" },
+    { "id": "nav-contact", "kind": "control", "grid": "H0:J0", "note": "yellow CONTACT button" },
+    { "id": "hero-portrait", "kind": "plate", "grid": "A1:B4", "note": "line-art portrait of Huy" },
+    { "id": "hero-blurb", "kind": "text", "grid": "A4:B5", "note": "handwritten blurb under portrait" },
+    { "id": "hero-name", "kind": "text", "grid": "C1:G3", "note": "HUY NGUYỄN huge marker display" },
+    { "id": "hero-role", "kind": "text", "grid": "C3:F4", "note": "FRONTEND DEVELOPER pink underline" },
+    { "id": "hero-points", "kind": "text", "grid": "C4:F5", "note": "star bullet craft points" },
+    { "id": "hero-bubble", "kind": "plate", "grid": "G1:I3", "note": "yellow speech bubble" },
+    { "id": "hero-cta", "kind": "control", "grid": "G3:I4", "note": "yellow CONTACT ME button" },
+    { "id": "exp-heading", "kind": "text", "grid": "A5:B6", "note": "EXPERIENCE teal highlight" },
+    { "id": "exp-sub", "kind": "text", "grid": "A6:B7", "note": "experience supporting line" },
+    { "id": "exp-ticket-1", "kind": "chrome", "grid": "C5:D7", "note": "employer ticket 1" },
+    { "id": "exp-ticket-2", "kind": "chrome", "grid": "E5:F7", "note": "employer ticket 2" },
+    { "id": "exp-ticket-3", "kind": "chrome", "grid": "G5:H7", "note": "employer ticket 3" },
+    { "id": "exp-ticket-4", "kind": "chrome", "grid": "I5:J7", "note": "employer ticket 4" },
+    { "id": "work-heading", "kind": "text", "grid": "A7:B8", "note": "SELECTED WORK pink highlight" },
+    { "id": "work-sub", "kind": "text", "grid": "A8:B9", "note": "some things I built" },
+    { "id": "proj-1-art", "kind": "plate", "grid": "C7:E9", "bleed": true, "note": "project 1 UI thumbnail" },
+    { "id": "proj-1-meta", "kind": "text", "grid": "C9:D9", "note": "project 1 title and view" },
+    { "id": "proj-2-art", "kind": "plate", "grid": "E7:G9", "bleed": true, "note": "project 2 UI thumbnail" },
+    { "id": "proj-2-meta", "kind": "text", "grid": "E9:F9", "note": "project 2 title and view" },
+    { "id": "proj-3-art", "kind": "plate", "grid": "G7:I9", "bleed": true, "note": "project 3 UI thumbnail" },
+    { "id": "proj-3-meta", "kind": "text", "grid": "G9:H9", "note": "project 3 title and view" },
+    { "id": "footer-line", "kind": "text", "grid": "A9:B9", "note": "open to opportunities line" }
+  ]
+}

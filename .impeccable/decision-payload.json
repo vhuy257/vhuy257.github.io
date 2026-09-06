@@ -1,0 +1,137 @@
+{
+  "title": "Choose the visual world",
+  "question": "Redesign home + projects for Huy Nguyễn’s portfolio. Copy and section order stay fixed. The roll assigned Gallery Hang — keep it, take an alternate, or re-roll.",
+  "options": [
+    {
+      "id": "assigned",
+      "label": "Gallery Hang",
+      "kicker": "THE ROLL",
+      "lineage": "museum exhibition wall — object first, wall label second",
+      "thesis": "Live demos hang as exhibited works; recruiters walk the rooms, labels stay quiet facts.",
+      "palette": ["#f4f1ea", "#1a1a1a", "#8b1e1e", "#c4bfb4"],
+      "materials": ["plaster wall", "mat board", "engraved label plate"],
+      "viewport": "First screen is one oversized work on the wall with a short wall label (name, role) and a clear path into the hang — not a dashboard of cards.",
+      "risk": "Can feel precious if demos are boxed like thumbnails instead of hung as large works.",
+      "raised": [
+        {
+          "from": "challenger-cloud-quarry",
+          "raise": "Committed spatial voids between sections — rooms, not stacked blocks."
+        },
+        {
+          "from": "challenger-seven-segment",
+          "raise": "Empty or loading states drawn as deliberately as filled proof (ghost plates)."
+        },
+        {
+          "from": "challenger-emission-rail",
+          "raise": "One off-centre calibrated rail for section wayfinding along the hang."
+        }
+      ],
+      "comp": ".impeccable/mocks/decision/assigned.webp"
+    },
+    {
+      "id": "model-pick",
+      "label": "Specimen Sheet",
+      "kicker": "IMPECCABLE’S PICK",
+      "lineage": "type foundry specimen sheets — craft proved by showing the thing itself",
+      "thesis": "Every template and demo is a live specimen of React/Next craft, printed at full scale.",
+      "palette": ["#f7f3e8", "#111111", "#2f5d50", "#d4a017"],
+      "materials": ["uncoated specimen stock", "ink black", "metal foundry rule"],
+      "viewport": "Giant name as specimen title; skills as glyph row; projects as full-bleed specimen plates you open live.",
+      "risk": "Also the direction many craft portfolios drift toward — familiar if executed softly.",
+      "comp": ".impeccable/mocks/decision/model-pick.webp"
+    },
+    {
+      "id": "challenger-papercut",
+      "label": "Layered Papercut",
+      "verdict": "competitive",
+      "lineage": "Łowicz layered paper roundels — depth only by stacked flat colour",
+      "thesis": "The portfolio builds outward in paste-up layers: identity, then employers, then demos on top.",
+      "palette": ["#e8dcc8", "#c41e3a", "#1e4d2b", "#f5c542", "#1a1a1a"],
+      "materials": ["glossy cut paper", "paste layers", "fold symmetry"],
+      "viewport": "A symmetrical layered roundel hero; each section is another colour layer settling onto the stack.",
+      "case": "Holds craft identification (makers recognise layered making); loses narrowly on recruiter scan clarity vs a gallery hang.",
+      "risk": "Folk colour can overshadow the demos if layers become decoration.",
+      "comp": ".impeccable/mocks/decision/challenger-papercut.webp",
+      "hero": "https://impeccable.style/worlds/cards/craft-making-lowicz-layered-papercut-hero.webp",
+      "board": "https://impeccable.style/worlds/cards/craft-making-lowicz-layered-papercut.webp"
+    },
+    {
+      "id": "challenger-ticket-wallet",
+      "label": "Ticket Wallet",
+      "verdict": "competitive",
+      "lineage": "jet-age airline ticket wallet — carbon coupons, route map, stubs",
+      "thesis": "Career as a ticket booklet: each employer a coupon, each demo a leg you tear open.",
+      "palette": ["#0b1f3a", "#c8102e", "#f7f5f0", "#6b3fa0"],
+      "materials": ["coupon stock", "carbon purple numerals", "baggage stub"],
+      "viewport": "Open wallet with remaining journey stubs; primary CTA validates the next leg (contact).",
+      "case": "Holds product clarity — sequential hiring scan maps cleanly to coupons; loses on craft-theatre vs gallery.",
+      "risk": "Travel metaphor can feel gimmicky if demos are not the journey’s payload.",
+      "comp": ".impeccable/mocks/decision/challenger-ticket-wallet.webp",
+      "hero": "https://impeccable.style/worlds/cards/vernacular-ephemera-jet-age-ticket-wallet-hero.webp",
+      "board": "https://impeccable.style/worlds/cards/vernacular-ephemera-jet-age-ticket-wallet.webp"
+    },
+    {
+      "id": "challenger-futurist-book",
+      "label": "Bolted Manifesto",
+      "verdict": "competitive",
+      "lineage": "Futurist bolted book — diagonal wood type at engine speed",
+      "thesis": "Frontend craft shouted as kinetic typography; demos slam in as onomatopoeic proof.",
+      "palette": ["#f2ebe0", "#111111", "#d61f1f", "#a8a8a8"],
+      "materials": ["cream stock", "wood-type ink", "aluminum bolts"],
+      "viewport": "Name and role in colliding display type; projects enter as percussive page-slams.",
+      "case": "Holds audience identification for craft energy; loses on recruiter calm-scan clarity.",
+      "risk": "Motion and tilt can bury employers and contact if volume stays at shout.",
+      "comp": ".impeccable/mocks/decision/challenger-futurist-book.webp",
+      "hero": "https://impeccable.style/worlds/cards/design-canon-futurist-bolted-book-hero.webp",
+      "board": "https://impeccable.style/worlds/cards/design-canon-futurist-bolted-book.webp"
+    },
+    {
+      "id": "challenger-cloud-quarry",
+      "label": "Cloud Quarry",
+      "verdict": "declined",
+      "lineage": "surreal cloud quarry — cut weather into temporary buildings",
+      "palette": ["#e8eef5", "#4a90d9", "#6b7280", "#c0c8d0"],
+      "materials": ["cumulus mass", "cut sky voids"],
+      "case": "Recruiters do not identify with surreal quarrying; demos lose clarity inside weather metaphor.",
+      "kept": "Committed spatial voids between sections."
+    },
+    {
+      "id": "challenger-seven-segment",
+      "label": "Seven-Segment Bench",
+      "verdict": "declined",
+      "lineage": "seven-segment clocks, price totems, scoreboards",
+      "palette": ["#0a0a0a", "#ff2a2a", "#3a1010"],
+      "materials": ["LED segments", "matte chassis"],
+      "case": "Live landing demos do not map to segment glyphs; instrument clarity fights Experience mode.",
+      "kept": "Ghost unlit states drawn as carefully as lit proof."
+    },
+    {
+      "id": "challenger-emission-rail",
+      "label": "Emission-Line Rail",
+      "verdict": "declined",
+      "lineage": "spectrogram plate on a calibrated viewing rail",
+      "palette": ["#1c1c1c", "#d9d2c5", "#f0c040"],
+      "materials": ["charcoal continuum", "hairline emission"],
+      "case": "Operate/science grammar undercuts a portfolio meant to be walked and felt.",
+      "kept": "One off-centre calibrated rail for wayfinding."
+    }
+  ],
+  "reroll": {
+    "registers": ["safer", "bolder"]
+  },
+  "buildPath": {
+    "value": "comp",
+    "toggle": true
+  },
+  "canon": true,
+  "canonCard": {
+    "label": "The category standard",
+    "thesis": "Centered intro, skill pills, experience timeline, project card grid, contact form — executed at full craft.",
+    "palette": ["#ffffff", "#0a0a0a", "#2563eb"],
+    "materials": ["clean grid", "soft shadow cards", "system sans"],
+    "viewport": "Avatar + name + Contact CTA, then familiar section stack.",
+    "risk": "Indistinguishable from other frontend portfolios by design.",
+    "comp": ".impeccable/mocks/decision/canon.webp"
+  },
+  "steer": true
+}

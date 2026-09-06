@@ -1,0 +1,132 @@
+{
+  "title": "Choose the visual world",
+  "question": "Re-roll 1 — prior hand retired. New assignment: Broadcast Ident. Emigre Bitmap won the weighing on both axes.",
+  "options": [
+    {
+      "id": "assigned",
+      "label": "Broadcast Ident",
+      "kicker": "THE ROLL",
+      "lineage": "TV channel idents / bumpers — a signature sting, then the programme",
+      "thesis": "Craft announces itself in a short motion ident; then recruiters enter the programme of demos.",
+      "palette": ["#0a0a0a", "#f5f5f5", "#ff3b1f", "#7cf5ff"],
+      "materials": ["broadcast black", "phosphor edge light", "sting frame"],
+      "viewport": "First seconds: name + role as a channel ident sting; then cut to the programme — oversized live demo as the show.",
+      "risk": "Motion-first can feel like splash-page theatre if the sting outlasts patience.",
+      "raised": [
+        {
+          "from": "challenger-decollage",
+          "raise": "Career history readable as layered strata beneath the programme, not a flat timeline."
+        },
+        {
+          "from": "challenger-phosphor",
+          "raise": "Visited sections leave a short afterimage trail — history of the walk."
+        },
+        {
+          "from": "challenger-kiln",
+          "raise": "Scroll cadence arrests at section ends like glaze freezing mid-pour."
+        }
+      ],
+      "comp": ".impeccable/mocks/decision/r1-assigned.webp"
+    },
+    {
+      "id": "model-pick",
+      "label": "Contact Sheet",
+      "kicker": "IMPECCABLE’S PICK",
+      "lineage": "darkroom contact sheets — frames selected, then enlarged",
+      "thesis": "Projects sit as proof frames on a contact sheet; open one to enlarge the live demo.",
+      "palette": ["#111111", "#e8e4dc", "#f2f2f0", "#b08d57"],
+      "materials": ["photo paper", "grease pencil marks", "enlarger light"],
+      "viewport": "Grid of demo frames with grease-pencil selects; one frame enlarges into the live work.",
+      "risk": "Also a familiar craft-portfolio move — safe if the marks stay decorative.",
+      "comp": ".impeccable/mocks/decision/r1-model-pick.webp"
+    },
+    {
+      "id": "challenger-emigre",
+      "label": "Bitmap Specimen",
+      "verdict": "wins",
+      "lineage": "Emigre bitmap type specimens — coarse pixels proud at poster scale",
+      "thesis": "React/Next craft shown as a digital type specimen: demos repeat at size steps, pixels honest.",
+      "palette": ["#f4f0e6", "#111111", "#ff5a1f", "#2a2a2a"],
+      "materials": ["newsprint white", "rich black", "visible pixels"],
+      "viewport": "Headline in coarse bitmap at poster scale; demos as the same craft repeated at five sizes; live open is the smooth cut.",
+      "case": "Wins both axes — tech hiring identifies with pixel-honest digital craft; specimen layout makes live demos the proof.",
+      "risk": "Nostalgia trap if bitmap stays costume instead of system.",
+      "comp": ".impeccable/mocks/decision/r1-challenger-emigre.webp",
+      "hero": "https://impeccable.style/worlds/cards/emigre-bitmap-specimen-hero.webp",
+      "board": "https://impeccable.style/worlds/cards/emigre-bitmap-specimen.webp"
+    },
+    {
+      "id": "challenger-zine",
+      "label": "Marker Zine",
+      "verdict": "competitive",
+      "lineage": "hand-drawn technical zine — napkin diagrams that teach hard things",
+      "thesis": "A friend walks the recruiter through craft with marker callouts; demos are the diagrams that open live.",
+      "palette": ["#f6f1e4", "#1a1a1a", "#ffe566", "#ff6bb5", "#3ecfcf"],
+      "materials": ["cream paper", "marker ink", "highlighter"],
+      "viewport": "Hand-lettered name; doodle arrows into the first live demo panel.",
+      "case": "Holds approachable identification; loses on polish clarity against demos that must look shipped.",
+      "risk": "Sketch charm can undercut ‘production craft’ proof.",
+      "comp": ".impeccable/mocks/decision/r1-challenger-zine.webp",
+      "hero": "https://impeccable.style/worlds/cards/hand-drawn-zine-explainer-hero.webp",
+      "board": "https://impeccable.style/worlds/cards/hand-drawn-zine-explainer.webp"
+    },
+    {
+      "id": "challenger-decollage",
+      "label": "Torn Billboard",
+      "verdict": "declined",
+      "lineage": "décollage — torn poster layers exposing older campaigns",
+      "palette": ["#d9d0c3", "#6e7a86", "#c45a3b", "#efe9df"],
+      "materials": ["bleached poster ink", "paste-gray board", "fibrous tear"],
+      "case": "Recruiters lose the scan path inside accidental tear composition.",
+      "kept": "Career as layered strata under the surface."
+    },
+    {
+      "id": "challenger-phosphor",
+      "label": "Phosphor Terminal",
+      "verdict": "declined",
+      "lineage": "green-phosphor midnight terminal",
+      "palette": ["#050805", "#33ff66", "#0a1a0c"],
+      "materials": ["curved glass", "P1 phosphor"],
+      "case": "Demos are not terminal text; drifts into category-cliché developer skin.",
+      "kept": "Afterimage trail for visited history."
+    },
+    {
+      "id": "challenger-weather-sun",
+      "label": "Indoor Sun",
+      "verdict": "declined",
+      "lineage": "monofrequency indoor weather sun in a mirrored hall",
+      "palette": ["#c47a16", "#1a1208", "#f0a030"],
+      "materials": ["sodium amber haze", "silhouette black"],
+      "case": "Atmosphere overwhelms employers, demos, and contact.",
+      "kept": "One committed environmental light field."
+    },
+    {
+      "id": "challenger-kiln",
+      "label": "Kiln Shelf",
+      "verdict": "declined",
+      "lineage": "glaze-river cups on a kiln shelf",
+      "palette": ["#f3efe6", "#1e3a8a", "#94a3b8"],
+      "materials": ["chalk shelf", "cobalt run"],
+      "case": "Ceramics metaphor does not map live web demos for hiring managers.",
+      "kept": "Arrested flow as scroll cadence at section ends."
+    }
+  ],
+  "reroll": {
+    "registers": ["safer", "bolder"]
+  },
+  "buildPath": {
+    "value": "comp",
+    "toggle": true
+  },
+  "canon": true,
+  "canonCard": {
+    "label": "The category standard",
+    "thesis": "Centered intro, skill pills, experience timeline, project card grid, contact form — executed at full craft.",
+    "palette": ["#ffffff", "#0a0a0a", "#2563eb"],
+    "materials": ["clean grid", "soft shadow cards", "system sans"],
+    "viewport": "Avatar + name + Contact CTA, then familiar section stack.",
+    "risk": "Indistinguishable from other frontend portfolios by design.",
+    "comp": ".impeccable/mocks/decision/canon.webp"
+  },
+  "steer": true
+}

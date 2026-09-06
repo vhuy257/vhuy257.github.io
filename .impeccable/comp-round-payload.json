@@ -1,0 +1,32 @@
+{
+  "title": "Approve the home composition",
+  "question": "Marker Zine is locked. Pick the home composition to build against (comp-led). A = decision comp (margin walkthrough). B = comic stack. C = sketchbook spread.",
+  "options": [
+    {
+      "id": "comp-a",
+      "label": "A — Margin walkthrough",
+      "kicker": "DECISION COMP",
+      "thesis": "Notes in the margin teach the page; demos live in a browser plate on the right.",
+      "comp": ".impeccable/mocks/home-zine-a-margin-walkthrough.webp"
+    },
+    {
+      "id": "comp-b",
+      "label": "B — Comic stack",
+      "kicker": "VARIATION",
+      "thesis": "Vertical comic panels: hero → experience strip → project demos with arrows.",
+      "comp": ".impeccable/mocks/home-zine-b-comic-stack.png"
+    },
+    {
+      "id": "comp-c",
+      "label": "C — Sketchbook spread",
+      "kicker": "VARIATION",
+      "thesis": "Open spread: profile notes left, oversized live demo right, contact on the ruled footer.",
+      "comp": ".impeccable/mocks/home-zine-c-sketchbook-spread.png"
+    }
+  ],
+  "buildPath": {
+    "value": "comp",
+    "toggle": false
+  },
+  "steer": true
+}
