@@ -45,11 +45,13 @@ const Project = () => {
   return (
     <section
       id="projects"
-      className="templates container max-w-6xl py-8 px-4 scroll-mt-24"
+      className="templates container max-w-6xl py-16 px-4 scroll-mt-24"
     >
       <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
         <div>
-          <h2 className="text-left text-3xl font-medium">Collections</h2>
+          <h2 className="text-left text-3xl font-medium tracking-tight text-foreground">
+            Collections
+          </h2>
           <p className="mt-2 text-sm text-muted-foreground max-w-xl">
             Browse by type: web templates and CMS dashboards.
           </p>

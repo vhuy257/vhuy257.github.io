@@ -13,30 +13,26 @@ export function ThemeToggle() {
     setMounted(true);
   }, []);
 
-  if (!mounted) {
-    return (
-      <Button
-        variant="outline"
-        size="icon"
-        className="relative h-10 w-10 rounded-full border border-gray-500/20 backdrop-blur-sm"
-        aria-label="Toggle theme"
-        disabled
-      >
-        <Sun className="h-5 w-5" />
-      </Button>
-    );
-  }
+  const isDark = mounted && theme === 'dark';
 
   return (
     <Button
       variant="outline"
       size="icon"
       onClick={toggleTheme}
-      className="relative h-10 w-10 rounded-full border border-gray-500/20backdrop-blur-sm transition-all duration-100 ease-in-out"
+      className="relative h-10 w-10 rounded-full border border-border/60 transition-all duration-100 ease-in-out"
       aria-label="Toggle theme"
     >
-      <Sun className={`h-5 w-5 transition-all border-input duration-300 ${theme === 'dark' ? '-rotate-90 scale-0 text-white' : 'rotate-0 scale-100'}`} />
-      <Moon className={`absolute h-5 w-5 transition-all border-input duration-300 ${theme === 'dark' ? 'rotate-0 scale-100 text-white' : 'rotate-90 scale-0'}`} />
+      <Sun
+        className={`h-5 w-5 transition-all duration-300 ${
+          isDark ? '-rotate-90 scale-0' : 'rotate-0 scale-100'
+        }`}
+      />
+      <Moon
+        className={`absolute h-5 w-5 transition-all duration-300 ${
+          isDark ? 'rotate-0 scale-100' : 'rotate-90 scale-0'
+        }`}
+      />
     </Button>
   );
 }

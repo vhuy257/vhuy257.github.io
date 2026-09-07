@@ -1,9 +1,8 @@
 'use client';
-import React, { useEffect } from 'react';
+import React, { useEffect, useId, useState } from 'react';
 import Link from 'next/link';
 import { useForm, ValidationError } from '@formspree/react';
 import { Button } from './ui/button';
-import { toast } from 'sonner';
 import { Spinner } from './ui/spinner';
 import { Icon } from '@iconify/react';
 import { cn } from '@/lib/utils';
@@ -37,56 +36,176 @@ const fieldClass = cn(
   'disabled:cursor-not-allowed disabled:opacity-50'
 );
 
-export default function ContactForm() {
+function ContactReceipt({ onWriteAnother }: { onWriteAnother: () => void }) {
+  const headingId = useId();
+
+  return (
+    <div
+      className="contact-filed flex min-h-[22rem] flex-col justify-center rounded-xl border border-border/50 bg-background/80 p-5 md:p-7 dark:bg-background/50"
+      role="status"
+      aria-labelledby={headingId}
+    >
+      <div className="contact-filed__mark mb-5 inline-flex size-11 items-center justify-center rounded-md border border-blue-500/35 bg-blue-500/10 text-blue-500">
+        <Icon icon="mdi:check" width={22} height={22} aria-hidden />
+      </div>
+      <h3
+        id={headingId}
+        className="contact-filed__title text-2xl font-medium tracking-tight text-foreground"
+      >
+        Message received
+      </h3>
+      <p className="contact-filed__body mt-3 max-w-sm text-sm leading-relaxed text-muted-foreground">
+        Your note is on my desk. I&apos;ll reply within a day — usually sooner.
+      </p>
+      <div className="contact-filed__actions mt-8 flex flex-wrap items-center gap-3">
+        <Button
+          type="button"
+          variant="outline"
+          onClick={onWriteAnother}
+          className="h-11 rounded-md px-5 text-sm font-medium"
+        >
+          Write another
+        </Button>
+        <Link
+          href="mailto:vhuy2571990@gmail.com"
+          className="text-sm font-medium text-blue-500 underline-offset-4 hover:underline"
+        >
+          Prefer email?
+        </Link>
+      </div>
+    </div>
+  );
+}
+
+function ContactFormFields({ onSucceeded }: { onSucceeded: () => void }) {
   const [state, handleSubmit] = useForm('manzzjlk');
-  const formRef = React.useRef<HTMLFormElement>(null);
 
   useEffect(() => {
     if (state.succeeded) {
-      toast.success('Thanks for reaching out!', {
-        description: "I'll get back to you soon.",
-      });
-      formRef.current?.reset();
+      onSucceeded();
     }
-  }, [state.succeeded]);
+  }, [state.succeeded, onSucceeded]);
 
   return (
-    <section id="contact" className="container max-w-6xl py-16 px-4 scroll-mt-24">
-      <div className="relative overflow-hidden rounded-2xl border border-border/60 bg-muted/30 dark:bg-muted/15">
-        <div
-          aria-hidden
-          className="pointer-events-none absolute inset-y-0 left-0 w-1 bg-blue-500"
-        />
-        <div
-          aria-hidden
-          className="pointer-events-none absolute -right-24 -top-24 size-72 rounded-full bg-blue-500/10 blur-3xl"
-        />
-        <div
-          aria-hidden
-          className="pointer-events-none absolute -bottom-28 -left-16 size-64 rounded-full bg-sky-400/10 blur-3xl"
-        />
+    <form
+      onSubmit={handleSubmit}
+      className="flex flex-col gap-7 rounded-xl border border-border/50 bg-background/80 p-5 md:p-7 dark:bg-background/50"
+    >
+      <div className="grid gap-7 sm:grid-cols-2">
+        <div className="space-y-1">
+          <label
+            htmlFor="name"
+            className="text-xs font-medium text-muted-foreground"
+          >
+            Name
+          </label>
+          <input
+            id="name"
+            type="text"
+            name="name"
+            placeholder="Your name"
+            className={fieldClass}
+            required
+          />
+          <ValidationError prefix="Name" field="name" errors={state.errors} />
+        </div>
 
-        <div className="relative grid gap-10 p-6 md:p-10 lg:grid-cols-2 lg:gap-16 lg:p-12">
+        <div className="space-y-1">
+          <label
+            htmlFor="email"
+            className="text-xs font-medium text-muted-foreground"
+          >
+            Email
+          </label>
+          <input
+            id="email"
+            type="email"
+            name="email"
+            placeholder="you@example.com"
+            className={fieldClass}
+            required
+          />
+          <ValidationError prefix="Email" field="email" errors={state.errors} />
+        </div>
+      </div>
+
+      <div className="space-y-1">
+        <label
+          htmlFor="message"
+          className="text-xs font-medium text-muted-foreground"
+        >
+          Message
+        </label>
+        <textarea
+          id="message"
+          name="message"
+          placeholder="Tell me about your idea..."
+          rows={5}
+          className={cn(fieldClass, 'min-h-[120px] resize-none')}
+          required
+        />
+        <ValidationError
+          prefix="Message"
+          field="message"
+          errors={state.errors}
+        />
+      </div>
+
+      <div className="flex flex-col gap-3 pt-1 sm:flex-row sm:items-center sm:justify-between">
+        <p className="order-2 text-xs text-muted-foreground sm:order-1">
+          Usually replies within a day.
+        </p>
+        <Button
+          type="submit"
+          disabled={state.submitting}
+          className="order-1 h-11 min-w-[160px] rounded-md bg-blue-500 px-6 text-sm font-medium text-white hover:bg-blue-500/90 sm:order-2"
+        >
+          {state.submitting ? (
+            <>
+              <Spinner className="mr-2" />
+              Sending...
+            </>
+          ) : (
+            <>
+              Send message
+              <Icon icon="mdi:arrow-right" width={18} height={18} />
+            </>
+          )}
+        </Button>
+      </div>
+    </form>
+  );
+}
+
+export default function ContactForm() {
+  const [filed, setFiled] = useState(false);
+  const [formKey, setFormKey] = useState(0);
+  const handleSucceeded = React.useCallback(() => setFiled(true), []);
+
+  return (
+    <section id="contact" className="container max-w-6xl scroll-mt-24 px-4 py-16">
+      <div className="overflow-hidden rounded-2xl border border-border/60 bg-muted/30 dark:bg-muted/15">
+        <div className="grid gap-10 p-6 md:p-10 lg:grid-cols-2 lg:gap-16 lg:p-12">
           <div className="flex flex-col justify-between gap-10">
             <div>
-              <h2 className="text-3xl md:text-4xl font-medium tracking-tight">
+              <h2 className="text-3xl font-medium tracking-tight md:text-4xl">
                 Let&apos;s connect
               </h2>
-              <p className="mt-4 max-w-sm text-muted-foreground leading-relaxed">
-                Have a project in mind or just want to chat? Drop a note and I will reply as soon as I can.
+              <p className="mt-4 max-w-sm leading-relaxed text-muted-foreground">
+                Have a project in mind or just want to chat? Drop a note and I
+                will reply as soon as I can.
               </p>
             </div>
 
             <div className="space-y-5">
-              <p className="text-xs font-medium uppercase tracking-[0.18em] text-muted-foreground">
-                Reach me directly
-              </p>
               <ul className="space-y-4">
                 {contactChannels.map((channel) => (
                   <li key={channel.label}>
                     <Link
                       href={channel.href}
-                      target={channel.href.startsWith('http') ? '_blank' : undefined}
+                      target={
+                        channel.href.startsWith('http') ? '_blank' : undefined
+                      }
                       rel={
                         channel.href.startsWith('http')
                           ? 'noopener noreferrer'
@@ -98,7 +217,7 @@ export default function ContactForm() {
                         <Icon icon={channel.icon} width={18} height={18} />
                       </span>
                       <span>
-                        <span className="block text-[11px] uppercase tracking-wider text-muted-foreground">
+                        <span className="block text-[11px] text-muted-foreground">
                           {channel.label}
                         </span>
                         <span className="font-medium underline-offset-4 group-hover:underline">
@@ -112,102 +231,19 @@ export default function ContactForm() {
             </div>
           </div>
 
-          <form
-            ref={formRef}
-            onSubmit={handleSubmit}
-            className="flex flex-col gap-7 rounded-xl bg-background/80 p-5 backdrop-blur-sm md:p-7 dark:bg-background/50"
-          >
-            <div className="grid gap-7 sm:grid-cols-2">
-              <div className="space-y-1">
-                <label
-                  htmlFor="name"
-                  className="text-xs font-medium uppercase tracking-[0.14em] text-muted-foreground"
-                >
-                  Name
-                </label>
-                <input
-                  id="name"
-                  type="text"
-                  name="name"
-                  placeholder="Your name"
-                  className={fieldClass}
-                  required
-                />
-                <ValidationError
-                  prefix="Name"
-                  field="name"
-                  errors={state.errors}
-                />
-              </div>
-
-              <div className="space-y-1">
-                <label
-                  htmlFor="email"
-                  className="text-xs font-medium uppercase tracking-[0.14em] text-muted-foreground"
-                >
-                  Email
-                </label>
-                <input
-                  id="email"
-                  type="email"
-                  name="email"
-                  placeholder="you@example.com"
-                  className={fieldClass}
-                  required
-                />
-                <ValidationError
-                  prefix="Email"
-                  field="email"
-                  errors={state.errors}
-                />
-              </div>
-            </div>
-
-            <div className="space-y-1">
-              <label
-                htmlFor="message"
-                className="text-xs font-medium uppercase tracking-[0.14em] text-muted-foreground"
-              >
-                Message
-              </label>
-              <textarea
-                id="message"
-                name="message"
-                placeholder="Tell me about your idea..."
-                rows={5}
-                className={cn(fieldClass, 'min-h-[120px] resize-none')}
-                required
-              />
-              <ValidationError
-                prefix="Message"
-                field="message"
-                errors={state.errors}
-              />
-            </div>
-
-            <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between pt-1">
-              <p className="text-xs text-muted-foreground order-2 sm:order-1">
-                Usually replies within a day.
-              </p>
-              <Button
-                type="submit"
-                disabled={state.submitting}
-                className="order-1 sm:order-2 h-11 min-w-[160px] rounded-full px-6 text-sm font-medium"
-              >
-                {state.submitting ? (
-                  <>
-                    <Spinner className="mr-2" />
-                    Sending...
-                  </>
-                ) : (
-                  <>
-                    Send message
-                    <Icon icon="mdi:arrow-right" width={18} height={18} />
-                  </>
-                )}
-              </Button>
-            </div>
-          </form>
+          {filed ? (
+            <ContactReceipt
+              onWriteAnother={() => {
+                setFiled(false);
+                setFormKey((key) => key + 1);
+              }}
+            />
+          ) : (
+            <ContactFormFields
+              key={formKey}
+              onSucceeded={handleSucceeded}
+            />
+          )}
         </div>
       </div>
     </section>

@@ -59,7 +59,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
       >
         <Image
           src={project.imageUrl}
-          alt=""
+          alt={project.title}
           width={1769}
           height={679}
           className="h-full w-full object-cover object-top transition-transform duration-500 ease-out group-hover:scale-[1.04]"

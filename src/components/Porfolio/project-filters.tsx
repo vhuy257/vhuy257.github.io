@@ -17,7 +17,7 @@ type ProjectFiltersProps = {
 export function ProjectFilters({ active, onChange }: ProjectFiltersProps) {
   return (
     <div
-      className="mt-8 flex flex-wrap gap-2"
+      className="mt-6 flex flex-wrap gap-2"
       role="tablist"
       aria-label="Filter collections by type"
     >
