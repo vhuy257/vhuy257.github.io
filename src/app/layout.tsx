@@ -32,7 +32,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className="dark">
       <head>
         <title>Huy Nguyễn — Frontend Developer</title>
         <meta name="description" content="Personal official porfolio website" />
@@ -44,10 +44,7 @@ export default function RootLayout({
           </TooltipProvider>
         </ThemeProvider>
         <Toaster richColors position="top-center" />
-      {/* impeccable-live-start */}
-<script src="http://localhost:8400/live.js?token=484c1007-316c-4354-972f-16d3d507a894"></script>
-{/* impeccable-live-end */}
-</body>
+      </body>
     </html>
   );
 }

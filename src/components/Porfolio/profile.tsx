@@ -42,12 +42,12 @@ export default function Profile() {
             <Icon icon="mynaui:send" width={16} height={16} />
           </button>
         </div>
-        <div className="profile-dossier__avatar order-first size-[8.5rem] overflow-hidden rounded-full border border-border/55 justify-self-start sm:order-none sm:justify-self-auto">
+        <div className="profile-dossier__avatar order-first size-[8.5rem] overflow-hidden shadow-lg rounded-full justify-self-start sm:order-none sm:justify-self-auto">
           <Image
-            src="/avatar_origin_180x247.webp"
+            src="/profile_img.png"
             alt="Huy Nguyen"
-            width={300}
-            height={300}
+            width={180}
+            height={247}
             className="size-full object-cover"
             priority
             fetchPriority="high"
