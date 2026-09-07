@@ -1,63 +1,58 @@
 'use client';
-import SplitText from "@/components/split-text";
-import TextType from "@/components/TextType/text-type";
+
 import Image from "next/image";
-import Skill from "./skill";
-import { CVDownload } from "./cv";
+import { Icon } from "@iconify/react";
+import { skillsData } from "@/lib/utils";
 
 export default function Profile() {
-  const handleAnimationComplete = () => {
-    console.log("All letters have animated!");
-  };
+  const primarySkills = Array.from(skillsData.keys()).slice(0, 6);
 
   return (
-    <section id="about" className="logo pb-0 text-center mt-10 container md:max-w-6xl px-4 scroll-mt-24">
-      <div className="w-full flex flex-wrap-reverse sm:flex-nowrap justify-between md:justify-between gap-8 mx-auto items-center">
-        <div className="left-content text-left col-span-3">
-          <SplitText
-            text="Huy Nguyễn"
-            className={`text-4xl md:text-6xl pb-4 pt-4 text-left w-full block`}
-            delay={100}
-            duration={0.6}
-            ease="power3.out"
-            splitType="chars"
-            from={{ opacity: 0, y: 80 }}
-            to={{ opacity: 1, y: 0 }}
-            threshold={0.1}
-            rootMargin="-100px"
-            textAlign="left"
-            onLetterAnimationComplete={handleAnimationComplete}
-          />
-          <div className="w-full block">
-            <TextType
-              text={["Hi! I'm a Frontend Developer"]}
-              typingSpeed={75}
-              pauseDuration={1500}
-              showCursor={true}
-              cursorCharacter="|"
-              className={`text-md md:text-3xl dark:text-gray-300 w-full block`}
-              textColors={["text-gray-700"] as never}
-              onSentenceComplete={handleAnimationComplete}
-              variableSpeed={undefined}
-            />
+    <section
+      id="about"
+      className="logo pb-0 text-center mt-10 container md:max-w-6xl px-4 scroll-mt-24"
+    >
+      <div className="grid w-full grid-cols-1 items-center gap-6 rounded-2xl border border-border/70 bg-muted/45 px-[1.425rem] py-[1.45rem] text-left sm:grid-cols-[minmax(0,1fr)_auto] sm:gap-6">
+        <div>
+          <h1 className="text-[clamp(1.75rem,3.5vw,2.5rem)] font-medium leading-tight tracking-tight text-foreground">
+            Huy Nguyễn
+          </h1>
+          <p className="mt-1.5 text-[0.9375rem] text-muted-foreground">
+            Frontend Developer · React / Next.js
+          </p>
+          <div className="mt-3.5 flex flex-wrap gap-1.5">
+            {primarySkills.map((name) => (
+              <span
+                key={name}
+                className="inline-flex rounded-md border border-border/60 bg-background/80 px-1.5 py-0.5 text-[11px] font-medium text-foreground"
+              >
+                {name}
+              </span>
+            ))}
           </div>
-          <Skill />
-          <CVDownload />
+          <button
+            type="button"
+            onClick={() =>
+              window.open("mailto:vhuy2571990@gmail.com", "_blank")
+            }
+            className="mt-4 inline-flex h-9 items-center gap-1.5 rounded-md bg-blue-500 px-4 text-[0.8125rem] font-medium text-white transition-colors hover:bg-blue-500/90 outline-none focus-visible:ring-2 focus-visible:ring-ring/50"
+          >
+            Contact Me
+            <Icon icon="mynaui:send" width={16} height={16} />
+          </button>
         </div>
-        <div className="right-content text-right md:flex items-center justify-center">
-          <div className="w-[180px] h-[180px] rounded-full overflow-hidden shadow-lg">
-            <Image
-              src="/avatar_origin_180x247.webp"
-              alt="Huy Nguyen"
-              width={300}
-              height={300}
-              className="w-full h-full object-cover"
-              priority={true}
-              fetchPriority="high"
-            />
-          </div>
+        <div className="size-[8.5rem] overflow-hidden rounded-full border border-border/55 justify-self-start sm:justify-self-auto">
+          <Image
+            src="/avatar_origin_180x247.webp"
+            alt="Huy Nguyen"
+            width={300}
+            height={300}
+            className="size-full object-cover"
+            priority
+            fetchPriority="high"
+          />
         </div>
       </div>
     </section>
   );
-};
+}

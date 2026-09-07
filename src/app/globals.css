@@ -120,3 +120,54 @@
 [data-sonner-toast] [data-description] {
   font-family: 'Lexend', sans-serif !important;
 }
+
+/* Work Experiences — cascade entrance (baked speed 0.45) */
+@keyframes work-cascade-rise {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+    filter: blur(2px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+    filter: none;
+  }
+}
+
+.work-cascade__item {
+  padding: 1.15rem 0 1.15rem 1.25rem;
+  border-left: 1px solid color-mix(in oklab, var(--border) 80%, transparent);
+  animation: work-cascade-rise 0.6525s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.work-cascade__item:nth-child(1) {
+  animation-delay: 0ms;
+}
+.work-cascade__item:nth-child(2) {
+  animation-delay: 92.5ms;
+}
+.work-cascade__item:nth-child(3) {
+  animation-delay: 185ms;
+}
+.work-cascade__item:nth-child(4) {
+  animation-delay: 277.5ms;
+}
+
+.work-cascade__dot {
+  position: absolute;
+  left: -0.28rem;
+  top: 1.55rem;
+  width: 0.55rem;
+  height: 0.55rem;
+  border-radius: 9999px;
+  background: #3b82f6;
+  box-shadow: 0 0 0 3px color-mix(in oklab, #3b82f6 18%, transparent);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .work-cascade__item {
+    animation: none;
+    filter: none;
+  }
+}

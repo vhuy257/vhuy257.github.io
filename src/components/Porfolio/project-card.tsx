@@ -66,41 +66,34 @@ export function ProjectCard({ project }: ProjectCardProps) {
         />
       </button>
 
-      <div className="flex flex-1 flex-col gap-3 p-4 pt-3.5">
-        <div className="space-y-1.5">
-          <p className="text-[11px] font-medium uppercase tracking-[0.06em] text-muted-foreground">
-            {meta.label}
-          </p>
-          <h3 className="text-base font-medium leading-snug tracking-tight line-clamp-2">
+      <div className="flex flex-1 items-end justify-between gap-3 px-4 pb-4 pt-[0.9rem]">
+        <div className="flex min-w-0 flex-col gap-[0.35rem]">
+          <h3 className="text-[0.9375rem] font-medium leading-snug tracking-tight line-clamp-2">
             {project.title}
           </h3>
-          {project.techName && (
-            <p className="text-xs leading-relaxed text-muted-foreground line-clamp-2">
-              {project.techName}
-            </p>
-          )}
+          <p className="text-[11px] uppercase tracking-[0.04em] text-muted-foreground">
+            {meta.label}
+            {project.techName ? ` · ${project.techName}` : null}
+          </p>
         </div>
 
-        {href && (
+        {href ? (
           <button
             type="button"
             onClick={() => openProject(project.demoLink, project.techLink)}
             className={cn(
-              "mt-auto inline-flex w-fit items-center gap-1.5",
-              "pt-0.5 text-sm font-medium text-blue-500",
-              "transition-colors hover:text-blue-600",
-              "outline-none focus-visible:underline focus-visible:underline-offset-4"
+              "inline-flex h-8 shrink-0 items-center justify-center gap-[0.3rem]",
+              "rounded-md border border-border/80 bg-transparent px-3",
+              "text-xs font-medium text-foreground",
+              "transition-[border-color,background-color,color] duration-150",
+              "hover:border-blue-500 hover:bg-blue-500/[0.08] hover:text-blue-600",
+              "outline-none focus-visible:ring-2 focus-visible:ring-ring/50"
             )}
           >
             {ctaLabel}
-            <Icon
-              icon="mdi:arrow-top-right"
-              width={16}
-              height={16}
-              className="transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
-            />
+            <Icon icon="mdi:arrow-top-right" width={14} height={14} />
           </button>
-        )}
+        ) : null}
       </div>
     </article>
   );
