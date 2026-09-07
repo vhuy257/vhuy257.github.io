@@ -2,7 +2,6 @@
 
 import Image from "next/image";
 import { Icon } from "@iconify/react";
-import { Button } from "@/components/ui/button";
 import {
   cn,
   projectCategoryMeta,
@@ -35,59 +34,71 @@ function openProject(demoLink?: string, techLink?: string) {
 export function ProjectCard({ project }: ProjectCardProps) {
   const meta = projectCategoryMeta[project.category];
   const href = project.demoLink || project.techLink;
+  const ctaLabel =
+    project.category === "technical-tips" ? "Open tip" : "Open demo";
 
   return (
-    <article className="group relative flex flex-col overflow-hidden rounded-lg border border-border/60 bg-card transition-all duration-300 hover:-translate-y-1">
-      <div className="relative aspect-[16/10] overflow-hidden bg-muted/40">
+    <article
+      className={cn(
+        "group relative flex flex-col overflow-hidden rounded-lg",
+        "border border-border/60 bg-card",
+        "transition-[border-color,background-color] duration-300",
+        "hover:border-border hover:bg-muted/20"
+      )}
+    >
+      <button
+        type="button"
+        onClick={() => openProject(project.demoLink, project.techLink)}
+        disabled={!href}
+        className={cn(
+          "relative aspect-[16/10] w-full overflow-hidden bg-muted/40 text-left",
+          "outline-none focus-visible:ring-2 focus-visible:ring-ring/50 focus-visible:ring-offset-2 focus-visible:ring-offset-background",
+          !href && "cursor-default"
+        )}
+        aria-label={href ? `${ctaLabel}: ${project.title}` : project.title}
+      >
         <Image
           src={project.imageUrl}
-          alt={project.title}
+          alt=""
           width={1769}
           height={679}
-          className="h-full w-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.03]"
+          className="h-full w-full object-cover object-top transition-transform duration-500 ease-out group-hover:scale-[1.04]"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/10 to-transparent opacity-80 transition-opacity duration-300 group-hover:opacity-90" />
+      </button>
 
-        <span
-          className={cn(
-            "absolute left-3 top-3 inline-flex items-center gap-1 rounded-md border px-2 py-1 text-[11px] font-medium backdrop-blur-sm",
-            meta.className
-          )}
-        >
-          <Icon icon={meta.icon} width={14} height={14} />
-          {meta.label}
-        </span>
-
-        <div className="absolute inset-0 flex items-center justify-center opacity-0 transition-all duration-300 group-hover:opacity-100">
-          <Button
-            onClick={() => openProject(project.demoLink, project.techLink)}
-            className="translate-y-3 border-none bg-white text-black shadow-lg transition-all duration-300 group-hover:translate-y-0 hover:bg-gray-100 hover:scale-105"
-            size="sm"
-            variant="default"
-          >
-            <Icon icon="mdi:eye" width={18} height={18} />
-            {project.category === "technical-tips" ? "Read" : "View"}
-          </Button>
-        </div>
-      </div>
-
-      <div className="flex flex-1 flex-col gap-2 p-4">
-        <h3 className="text-base font-medium leading-snug line-clamp-2">
-          {project.title}
-        </h3>
-        {project.techName && (
-          <p className="text-xs text-muted-foreground line-clamp-2">
-            {project.techName}
+      <div className="flex flex-1 flex-col gap-3 p-4 pt-3.5">
+        <div className="space-y-1.5">
+          <p className="text-[11px] font-medium uppercase tracking-[0.06em] text-muted-foreground">
+            {meta.label}
           </p>
-        )}
+          <h3 className="text-base font-medium leading-snug tracking-tight line-clamp-2">
+            {project.title}
+          </h3>
+          {project.techName && (
+            <p className="text-xs leading-relaxed text-muted-foreground line-clamp-2">
+              {project.techName}
+            </p>
+          )}
+        </div>
+
         {href && (
           <button
             type="button"
             onClick={() => openProject(project.demoLink, project.techLink)}
-            className="mt-auto inline-flex items-center gap-1 pt-1 text-sm text-blue-500 hover:underline"
+            className={cn(
+              "mt-auto inline-flex w-fit items-center gap-1.5",
+              "pt-0.5 text-sm font-medium text-blue-500",
+              "transition-colors hover:text-blue-600",
+              "outline-none focus-visible:underline focus-visible:underline-offset-4"
+            )}
           >
-            {project.category === "technical-tips" ? "Open tip" : "Open demo"}
-            <Icon icon="mdi:arrow-top-right" width={16} height={16} />
+            {ctaLabel}
+            <Icon
+              icon="mdi:arrow-top-right"
+              width={16}
+              height={16}
+              className="transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+            />
           </button>
         )}
       </div>
@@ -113,7 +124,7 @@ export function ProjectGrid({
   }
 
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 mt-6 gap-6">
+    <div className="mt-6 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
       {projects.map((project, index) => (
         <ProjectCard key={`${project.title}-${index}`} project={project} />
       ))}

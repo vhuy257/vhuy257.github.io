@@ -44,7 +44,10 @@ export default function RootLayout({
           </TooltipProvider>
         </ThemeProvider>
         <Toaster richColors position="top-center" />
-      </body>
+      {/* impeccable-live-start */}
+<script src="http://localhost:8400/live.js?token=484c1007-316c-4354-972f-16d3d507a894"></script>
+{/* impeccable-live-end */}
+</body>
     </html>
   );
 }
