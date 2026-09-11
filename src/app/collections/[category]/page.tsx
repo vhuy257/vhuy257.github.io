@@ -42,7 +42,7 @@ export default async function CollectionCategoryPage({ params }: PageProps) {
   return (
     <>
       <HeaderSocialIcon />
-      <main className="min-h-screen text-foreground transition-colors duration-300">
+      <main className="min-h-screen text-foreground transition-colors duration-300 max-w-6xl mx-auto">
         <CollectionsBrowser initialCategory={category} />
       </main>
       <ScrollToTop />
