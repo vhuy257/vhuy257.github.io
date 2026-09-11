@@ -10,7 +10,7 @@ const WorkExp = () => {
       className="work-cascade container md:max-w-6xl px-4 py-16 scroll-mt-24"
     >
       <h2 className="m-0 text-left text-3xl font-medium tracking-tight text-foreground">
-        Work Experiences
+        Experiences
       </h2>
       <div className="work-cascade__rail relative mt-8 flex flex-col gap-3">
         {workExpsData?.map((job, index) => (

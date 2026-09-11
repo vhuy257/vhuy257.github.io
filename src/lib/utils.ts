@@ -81,6 +81,18 @@ export const projectCategoryMeta: Record<
 
 export const projectsData = [
   {
+    title: "Verde Fintech Wallet",
+    imageUrl: "/verde-fintech-wallet.png",
+    demoLink: "https://verde-fintech-wallet.vhuy2571990.workers.dev",
+    category: "web-template" as ProjectCategory,
+  },
+  {
+    title: "An Tâm Dental Studio",
+    imageUrl: "/an-tam-dental.png",
+    demoLink: "https://saas-template.vhuy2571990.workers.dev",
+    category: "web-template" as ProjectCategory,
+  },
+  {
     title: "Basilico Home",
     imageUrl: "/slider-7.png",
     demoLink: "/basilico",
@@ -172,12 +184,6 @@ export const projectsData = [
     imageUrl: "/all_svg_icons.png",
     demoLink: "https://allsvgicons.com/",
     category: "web-template" as ProjectCategory,
-  },
-  {
-    title: "SaaS Admin Template",
-    imageUrl: "/saas-template.png",
-    demoLink: "https://saas-template.vhuy2571990.workers.dev",
-    category: "cms-dashboard" as ProjectCategory,
   },
   {
     title: "SmileCare Dental CMS",

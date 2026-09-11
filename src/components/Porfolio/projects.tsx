@@ -50,7 +50,7 @@ const Project = () => {
       <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
         <div>
           <h2 className="text-left text-3xl font-medium tracking-tight text-foreground">
-            Collections
+            My Works
           </h2>
           <p className="mt-2 text-sm text-muted-foreground max-w-xl">
             Browse by type: web templates and CMS dashboards.

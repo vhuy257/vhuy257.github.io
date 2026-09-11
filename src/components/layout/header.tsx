@@ -18,12 +18,14 @@ import { cn } from "@/lib/utils";
 
 function getActiveSection(scroll: number): NavSectionId {
   let current: NavSectionId = "about";
+  let currentOffsetTop = -Infinity;
 
   for (const item of navItems) {
     const el = document.getElementById(item.id);
     if (!el) continue;
-    if (scroll >= el.offsetTop - 120) {
+    if (scroll >= el.offsetTop - 120 && el.offsetTop > currentOffsetTop) {
       current = item.id;
+      currentOffsetTop = el.offsetTop;
     }
   }
 
