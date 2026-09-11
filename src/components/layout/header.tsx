@@ -66,7 +66,7 @@ const HeaderSocialIcon = () => {
         }
         applyActiveFromVisibility();
       },
-      { rootMargin: `-${headerHeight + 8}px 0px -100% 0px`, threshold: 0 }
+      { rootMargin: `-${headerHeight + 8}px 0px -65% 0px`, threshold: 0 }
     );
 
     sections.forEach(({ el }) => observer.observe(el));
