@@ -11,7 +11,7 @@ import {
 } from "@/lib/projects";
 
 const Project = () => {
-  const [filter, setFilter] = useState<FilterKey>("all");
+  const [filter, setFilter] = useState<FilterKey>("web-template");
 
   const previewProjects = useMemo(() => {
     if (filter === "all") {
