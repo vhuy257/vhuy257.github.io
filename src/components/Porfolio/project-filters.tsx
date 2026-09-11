@@ -33,8 +33,8 @@ export function ProjectFilters({ active, onChange }: ProjectFiltersProps) {
             className={cn(
               "inline-flex items-center gap-1.5 rounded-md border px-3 py-1.5 text-sm transition-colors duration-200",
               isActive
-                ? "border-blue-500 bg-blue-500 text-white"
-                : "border-border bg-transparent text-foreground hover:border-blue-500/50 hover:bg-blue-500/5"
+                ? "border-orange-600 bg-orange-600 text-white"
+                : "border-border bg-transparent text-foreground hover:border-orange-600/50 hover:bg-orange-600/5"
             )}
           >
             {item.icon && <Icon icon={item.icon} width={16} height={16} />}
@@ -58,7 +58,7 @@ export function ViewAllLink({ category, className }: ViewAllLinkProps) {
     <Link
       href={href}
       className={cn(
-        "inline-flex items-center gap-1 text-sm font-medium text-blue-500 hover:underline",
+        "inline-flex items-center gap-1 text-sm font-medium text-orange-600 hover:underline",
         className
       )}
     >

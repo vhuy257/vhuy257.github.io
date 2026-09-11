@@ -32,7 +32,7 @@ const fieldClass = cn(
   'peer w-full bg-transparent border-0 border-b border-border/80 rounded-none px-0 py-3',
   'text-base md:text-sm text-foreground placeholder:text-muted-foreground/70',
   'outline-none transition-[border-color,box-shadow] duration-200',
-  'focus:border-blue-500 focus:ring-0',
+  'focus:border-orange-600 focus:ring-0',
   'disabled:cursor-not-allowed disabled:opacity-50'
 );
 
@@ -45,7 +45,7 @@ function ContactReceipt({ onWriteAnother }: { onWriteAnother: () => void }) {
       role="status"
       aria-labelledby={headingId}
     >
-      <div className="contact-filed__mark mb-5 inline-flex size-11 items-center justify-center rounded-md border border-blue-500/35 bg-blue-500/10 text-blue-500">
+      <div className="contact-filed__mark mb-5 inline-flex size-11 items-center justify-center rounded-md border border-orange-600/35 bg-orange-600/10 text-orange-600">
         <Icon icon="mdi:check" width={22} height={22} aria-hidden />
       </div>
       <h3
@@ -68,7 +68,7 @@ function ContactReceipt({ onWriteAnother }: { onWriteAnother: () => void }) {
         </Button>
         <Link
           href="mailto:vhuy2571990@gmail.com"
-          className="text-sm font-medium text-blue-500 underline-offset-4 hover:underline"
+          className="text-sm font-medium text-orange-600 underline-offset-4 hover:underline"
         >
           Prefer email?
         </Link>
@@ -158,7 +158,7 @@ function ContactFormFields({ onSucceeded }: { onSucceeded: () => void }) {
         <Button
           type="submit"
           disabled={state.submitting}
-          className="order-1 h-11 min-w-[160px] rounded-md bg-blue-500 px-6 text-sm font-medium text-white hover:bg-blue-500/90 sm:order-2"
+          className="order-1 h-11 min-w-[160px] rounded-md bg-orange-600 px-6 text-sm font-medium text-white hover:bg-orange-600/90 sm:order-2"
         >
           {state.submitting ? (
             <>
@@ -211,9 +211,9 @@ export default function ContactForm() {
                           ? 'noopener noreferrer'
                           : undefined
                       }
-                      className="group inline-flex items-center gap-3 text-sm transition-colors hover:text-blue-500"
+                      className="group inline-flex items-center gap-3 text-sm transition-colors hover:text-orange-600"
                     >
-                      <span className="flex size-9 items-center justify-center rounded-full border border-border/70 bg-background/80 text-foreground transition-colors group-hover:border-blue-500 group-hover:text-blue-500">
+                      <span className="flex size-9 items-center justify-center rounded-full border border-border/70 bg-background/80 text-foreground transition-colors group-hover:border-orange-600 group-hover:text-orange-600">
                         <Icon icon={channel.icon} width={18} height={18} />
                       </span>
                       <span>

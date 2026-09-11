@@ -86,7 +86,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
               "rounded-md border border-border/80 bg-transparent px-3",
               "text-xs font-medium text-foreground",
               "transition-[border-color,background-color,color] duration-150",
-              "hover:border-blue-500 hover:bg-blue-500/[0.08] hover:text-blue-600",
+              "hover:border-orange-600 hover:bg-orange-600/[0.08] hover:text-orange-700",
               "outline-none focus-visible:ring-2 focus-visible:ring-ring/50"
             )}
           >

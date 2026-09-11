@@ -67,7 +67,7 @@ const HeaderSocialIcon = () => {
                   icon="iconoir:linkedin"
                   width={28}
                   height={28}
-                  className={`hover:text-blue-600 transition-colors duration-20 ${iconColor}`}
+                  className={`hover:text-orange-700 transition-colors duration-20 ${iconColor}`}
                 />
               </Link>
             </TooltipTrigger>
@@ -82,7 +82,7 @@ const HeaderSocialIcon = () => {
                   icon="material-symbols-light:alternate-email"
                   width={28}
                   height={28}
-                  className={`hover:text-blue-500 transition-colors duration-20 ${iconColor}`}
+                  className={`hover:text-orange-600 transition-colors duration-20 ${iconColor}`}
                 />
               </Link>
             </TooltipTrigger>
@@ -97,7 +97,7 @@ const HeaderSocialIcon = () => {
                   icon="mdi:github"
                   width={28}
                   height={28}
-                  className={`dark:text-white hover:text-blue-500 transition-colors duration-20 ${iconColor}`}
+                  className={`dark:text-white hover:text-orange-600 transition-colors duration-20 ${iconColor}`}
                 />
               </Link>
             </TooltipTrigger>
@@ -120,7 +120,7 @@ const HeaderSocialIcon = () => {
                   className={cn(
                     "inline-block rounded-md px-3 py-1.5 text-sm whitespace-nowrap transition-colors duration-200",
                     isHome && activeId === item.id
-                      ? "bg-blue-500 text-white"
+                      ? "bg-orange-600 text-white"
                       : "text-muted-foreground hover:text-foreground hover:bg-accent"
                   )}
                   aria-current={

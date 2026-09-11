@@ -12,43 +12,57 @@ export default function Profile() {
   return (
     <section
       id="about"
-      className="logo text-center container md:max-w-6xl px-4 pt-10 pb-16 md:pt-12 scroll-mt-24"
+      className="text-center container md:max-w-6xl px-4 pt-14 pb-20 md:pt-20 md:pb-24 scroll-mt-24"
     >
-      <div className="profile-dossier grid w-full grid-cols-1 items-center gap-6 rounded-2xl border border-border/70 bg-muted/45 px-[1.425rem] py-[1.45rem] text-left sm:grid-cols-[minmax(0,1fr)_auto] sm:gap-6">
-        <div>
-          <h1 className="profile-dossier__name text-[clamp(1.75rem,3.5vw,2.5rem)] font-medium leading-tight tracking-tight text-foreground">
+      <div className="profile-dossier grid w-full grid-cols-1 items-end gap-10 text-left sm:grid-cols-[minmax(0,1fr)_auto] sm:gap-8 lg:gap-16">
+        <div className="order-2 sm:order-none">
+          <h1 className="profile-dossier__name m-0 text-[clamp(2.5rem,6vw,4.25rem)] font-normal leading-[1.05] tracking-tight text-foreground">
             Huy Nguyễn
           </h1>
-          <p className="profile-dossier__role mt-1.5 text-[0.9375rem] text-muted-foreground">
-            Frontend Developer · React / Next.js
+          <p className="profile-dossier__role mt-3 text-xl text-muted-foreground">
+            Frontend Developer
+            <span className="mx-2 text-border" aria-hidden>
+              ·
+            </span>
+            React / Next.js
           </p>
-          <div className="profile-dossier__skills mt-3.5 flex flex-wrap gap-1.5">
-            {primarySkills.map((name, index) => (
-              <span
-                key={name}
-                className="profile-dossier__chip inline-flex rounded-md border border-border/60 bg-background/80 px-1.5 py-0.5 text-[11px] font-medium text-foreground"
-                style={{ ["--chip-i" as string]: index }}
-              >
-                {name}
-              </span>
-            ))}
+          <div className="profile-dossier__skills mt-6 flex flex-wrap gap-2">
+            {primarySkills.map((name, index) =>
+              index === 0 ? (
+                <span
+                  key={name}
+                  className="profile-dossier__chip profile-dossier__chip--selected inline-flex rounded-md bg-orange-600 px-2.5 py-1 text-xs font-medium text-white"
+                  style={{ ["--chip-i" as string]: index }}
+                >
+                  {name}
+                </span>
+              ) : (
+                <span
+                  key={name}
+                  className="profile-dossier__chip inline-flex rounded-md border border-border/70 bg-muted/60 px-2.5 py-1 text-xs font-medium text-foreground dark:bg-muted/25"
+                  style={{ ["--chip-i" as string]: index }}
+                >
+                  {name}
+                </span>
+              )
+            )}
           </div>
           <button
             type="button"
             onClick={() => scrollTo("#contact")}
-            className="profile-dossier__cta mt-4 inline-flex h-9 items-center gap-1.5 rounded-md bg-blue-500 px-4 text-[0.8125rem] font-medium text-white transition-colors hover:bg-blue-500/90 outline-none focus-visible:ring-2 focus-visible:ring-ring/50"
+            className="profile-dossier__cta mt-8 inline-flex h-10 items-center gap-2 rounded-md bg-orange-600 px-5 text-sm font-medium text-white transition-colors hover:bg-orange-600/90 outline-none focus-visible:ring-2 focus-visible:ring-ring/50"
           >
             Contact Me
             <Icon icon="mynaui:send" width={16} height={16} />
           </button>
         </div>
-        <div className="profile-dossier__avatar order-first size-[8.5rem] overflow-hidden shadow-lg rounded-full justify-self-start sm:order-none sm:justify-self-auto">
+        <div className="profile-dossier__avatar order-first mx-auto w-44 shrink-0 select-none sm:order-none sm:mx-0 sm:w-56 md:w-72 lg:w-[19rem]">
           <Image
             src="/profile_img.png"
             alt="Huy Nguyen"
-            width={180}
-            height={247}
-            className="size-full object-cover"
+            width={1024}
+            height={1028}
+            className="h-auto w-full object-contain"
             priority
             fetchPriority="high"
           />

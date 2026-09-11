@@ -1,37 +1,37 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-09-07T08:49:35.5787274+07:00",
+  "generatedAt": "2026-09-11T00:00:00+07:00",
   "title": "Design System: Huy Nguyễn Portfolio",
   "extensions": {
     "colorMeta": {
       "primary": {
         "role": "primary",
-        "displayName": "Signal Blue",
-        "canonical": "oklch(0.623 0.214 259.815)",
+        "displayName": "Ember Orange",
+        "canonical": "oklch(0.646 0.222 41.116)",
         "tonalRamp": [
-          "oklch(0.25 0.12 260)",
-          "oklch(0.35 0.16 260)",
-          "oklch(0.45 0.19 260)",
-          "oklch(0.55 0.21 260)",
-          "oklch(0.623 0.214 259.815)",
-          "oklch(0.72 0.16 260)",
-          "oklch(0.85 0.08 260)",
-          "oklch(0.95 0.03 260)"
+          "oklch(0.266 0.079 36.259)",
+          "oklch(0.408 0.123 38.172)",
+          "oklch(0.553 0.195 38.402)",
+          "oklch(0.646 0.222 41.116)",
+          "oklch(0.705 0.213 47.604)",
+          "oklch(0.837 0.128 66.29)",
+          "oklch(0.901 0.076 70.697)",
+          "oklch(0.98 0.016 73.684)"
         ]
       },
-      "action-blue": {
+      "action-ember": {
         "role": "primary",
-        "displayName": "Action Blue",
-        "canonical": "#3b82f6",
+        "displayName": "Action Ember",
+        "canonical": "#EA580C",
         "tonalRamp": [
-          "#1e3a8a",
-          "#1d4ed8",
-          "#2563eb",
-          "#3b82f6",
-          "#60a5fa",
-          "#93c5fd",
-          "#bfdbfe",
-          "#dbeafe"
+          "#7C2D12",
+          "#9A3412",
+          "#C2410C",
+          "#EA580C",
+          "#F97316",
+          "#FB923C",
+          "#FDBA74",
+          "#FFEDD5"
         ]
       },
       "background": {
@@ -126,18 +126,13 @@
       }
     },
     "typographyMeta": {
-      "display": { "displayName": "Display", "purpose": "Profile name only (SplitText)." },
+      "display": { "displayName": "Display", "purpose": "Profile name only." },
       "headline": { "displayName": "Headline", "purpose": "Section titles." },
-      "title": { "displayName": "Title", "purpose": "Role line / typed intro." },
+      "title": { "displayName": "Title", "purpose": "Role line." },
       "body": { "displayName": "Body", "purpose": "Paragraphs, forms, card copy." },
       "label": { "displayName": "Label", "purpose": "Badges, chips, tooltips." }
     },
     "shadows": [
-      {
-        "name": "avatar-soft",
-        "value": "0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1)",
-        "purpose": "Soft lift under circular avatar only."
-      },
       {
         "name": "tooltip",
         "value": "0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1)",
@@ -154,6 +149,11 @@
         "name": "focus-ring",
         "value": "box-shadow / ring transition",
         "purpose": "Input and button focus-visible rings."
+      },
+      {
+        "name": "swatch-select",
+        "value": "cubic-bezier(0.16, 1, 0.3, 1) 500ms, scale(0.7) rotate(-4deg) to none, delayed to settle after the dossier cascade",
+        "purpose": "The one selected/lead skill chip on Profile snaps into place after its neighbors settle — the site's one authored signature moment, not a repeated hover gimmick."
       }
     ],
     "breakpoints": [
@@ -167,9 +167,9 @@
       "name": "Primary Button",
       "kind": "button",
       "refersTo": "button-primary",
-      "description": "Action CTA — Action Blue fill, restrained height.",
-      "html": "<button class=\"ds-btn-primary\" type=\"button\">Download CV</button>",
-      "css": ".ds-btn-primary { display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; height: 2.25rem; padding: 0.5rem 1rem; border: none; border-radius: 0.525rem; background: #3b82f6; color: #fff; font-family: Lexend, sans-serif; font-size: 0.875rem; font-weight: 500; cursor: pointer; transition: background 0.15s ease; } .ds-btn-primary:hover { background: color-mix(in oklab, #3b82f6 90%, transparent); } .ds-btn-primary:focus-visible { outline: none; box-shadow: 0 0 0 3px color-mix(in oklab, oklch(0.623 0.214 259.815) 50%, transparent); }"
+      "description": "Action CTA — Ember fill, restrained height.",
+      "html": "<button class=\"ds-btn-primary\" type=\"button\">Contact Me</button>",
+      "css": ".ds-btn-primary { display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; height: 2.25rem; padding: 0.5rem 1rem; border: none; border-radius: 0.525rem; background: #EA580C; color: #fff; font-family: Lexend, sans-serif; font-size: 0.875rem; font-weight: 500; cursor: pointer; transition: background 0.15s ease; } .ds-btn-primary:hover { background: color-mix(in oklab, #EA580C 90%, transparent); } .ds-btn-primary:focus-visible { outline: none; box-shadow: 0 0 0 3px color-mix(in oklab, oklch(0.646 0.222 41.116) 50%, transparent); }"
     },
     {
       "name": "Ghost Button",
@@ -177,23 +177,23 @@
       "refersTo": "button-ghost",
       "description": "Quiet secondary action with accent wash on hover.",
       "html": "<button class=\"ds-btn-ghost\" type=\"button\">View demo</button>",
-      "css": ".ds-btn-ghost { display: inline-flex; align-items: center; justify-content: center; height: 2.25rem; padding: 0.5rem 1rem; border: none; border-radius: 0.525rem; background: transparent; color: oklch(0.141 0.005 285.823); font-family: Lexend, sans-serif; font-size: 0.875rem; font-weight: 500; cursor: pointer; transition: background 0.15s ease; } .ds-btn-ghost:hover { background: oklch(0.967 0.001 286.375); } .ds-btn-ghost:focus-visible { outline: none; box-shadow: 0 0 0 3px color-mix(in oklab, oklch(0.623 0.214 259.815) 50%, transparent); }"
+      "css": ".ds-btn-ghost { display: inline-flex; align-items: center; justify-content: center; height: 2.25rem; padding: 0.5rem 1rem; border: none; border-radius: 0.525rem; background: transparent; color: oklch(0.141 0.005 285.823); font-family: Lexend, sans-serif; font-size: 0.875rem; font-weight: 500; cursor: pointer; transition: background 0.15s ease; } .ds-btn-ghost:hover { background: oklch(0.967 0.001 286.375); } .ds-btn-ghost:focus-visible { outline: none; box-shadow: 0 0 0 3px color-mix(in oklab, oklch(0.646 0.222 41.116) 50%, transparent); }"
     },
     {
       "name": "Default Input",
       "kind": "input",
       "refersTo": "input-default",
-      "description": "Transparent field with hairline border and signal-blue focus ring.",
+      "description": "Transparent field with hairline border and ember focus ring.",
       "html": "<input class=\"ds-input\" type=\"text\" placeholder=\"Your name\" />",
-      "css": ".ds-input { width: 100%; height: 2.25rem; padding: 0.25rem 0.75rem; border: 1px solid oklch(0.92 0.004 286.32); border-radius: 0.525rem; background: transparent; color: oklch(0.141 0.005 285.823); font-family: Lexend, sans-serif; font-size: 0.875rem; outline: none; transition: border-color 0.15s ease, box-shadow 0.15s ease; } .ds-input::placeholder { color: oklch(0.552 0.016 285.938); } .ds-input:focus-visible { border-color: oklch(0.623 0.214 259.815); box-shadow: 0 0 0 3px color-mix(in oklab, oklch(0.623 0.214 259.815) 50%, transparent); }"
+      "css": ".ds-input { width: 100%; height: 2.25rem; padding: 0.25rem 0.75rem; border: 1px solid oklch(0.92 0.004 286.32); border-radius: 0.525rem; background: transparent; color: oklch(0.141 0.005 285.823); font-family: Lexend, sans-serif; font-size: 0.875rem; outline: none; transition: border-color 0.15s ease, box-shadow 0.15s ease; } .ds-input::placeholder { color: oklch(0.552 0.016 285.938); } .ds-input:focus-visible { border-color: oklch(0.646 0.222 41.116); box-shadow: 0 0 0 3px color-mix(in oklab, oklch(0.646 0.222 41.116) 50%, transparent); }"
     },
     {
       "name": "Contact Underline Field",
       "kind": "input",
       "refersTo": "input-default",
-      "description": "Signature contact form field — bottom border only, action-blue focus.",
+      "description": "Signature contact form field — bottom border only, ember focus.",
       "html": "<input class=\"ds-input-underline\" type=\"email\" placeholder=\"Email\" />",
-      "css": ".ds-input-underline { width: 100%; padding: 0.75rem 0; border: 0; border-bottom: 1px solid color-mix(in oklab, oklch(0.92 0.004 286.32) 80%, transparent); border-radius: 0; background: transparent; color: oklch(0.141 0.005 285.823); font-family: Lexend, sans-serif; font-size: 0.875rem; outline: none; transition: border-color 0.2s ease; } .ds-input-underline::placeholder { color: color-mix(in oklab, oklch(0.552 0.016 285.938) 70%, transparent); } .ds-input-underline:focus { border-bottom-color: #3b82f6; }"
+      "css": ".ds-input-underline { width: 100%; padding: 0.75rem 0; border: 0; border-bottom: 1px solid color-mix(in oklab, oklch(0.92 0.004 286.32) 80%, transparent); border-radius: 0; background: transparent; color: oklch(0.141 0.005 285.823); font-family: Lexend, sans-serif; font-size: 0.875rem; outline: none; transition: border-color 0.2s ease; } .ds-input-underline::placeholder { color: color-mix(in oklab, oklch(0.552 0.016 285.938) 70%, transparent); } .ds-input-underline:focus { border-bottom-color: #EA580C; }"
     },
     {
       "name": "Default Badge",
@@ -201,7 +201,15 @@
       "refersTo": "badge-default",
       "description": "Compact category/status chip.",
       "html": "<span class=\"ds-badge\">Web Template</span>",
-      "css": ".ds-badge { display: inline-flex; align-items: center; gap: 0.25rem; padding: 0.125rem 0.5rem; border-radius: 0.525rem; border: 1px solid transparent; background: oklch(0.623 0.214 259.815); color: oklch(0.97 0.014 254.604); font-family: Lexend, sans-serif; font-size: 0.75rem; font-weight: 500; }"
+      "css": ".ds-badge { display: inline-flex; align-items: center; gap: 0.25rem; padding: 0.125rem 0.5rem; border-radius: 0.525rem; border: 1px solid transparent; background: oklch(0.646 0.222 41.116); color: oklch(0.98 0.016 73.684); font-family: Lexend, sans-serif; font-size: 0.75rem; font-weight: 500; }"
+    },
+    {
+      "name": "Selected Swatch Chip",
+      "kind": "chip",
+      "refersTo": "badge-default",
+      "description": "The Profile skill-chip signature: exactly one chip per group renders solid-filled as the 'selected' swatch; every sibling stays a neutral outline chip.",
+      "html": "<span class=\"ds-chip-selected\">React</span> <span class=\"ds-chip\">Next.js</span>",
+      "css": ".ds-chip-selected { display: inline-flex; border-radius: 0.525rem; padding: 0.25rem 0.625rem; font-family: Lexend, sans-serif; font-size: 0.75rem; font-weight: 500; background: #EA580C; color: #fff; } .ds-chip { display: inline-flex; border-radius: 0.525rem; padding: 0.25rem 0.625rem; font-family: Lexend, sans-serif; font-size: 0.75rem; font-weight: 500; background: color-mix(in oklab, oklch(0.967 0.001 286.375) 60%, transparent); border: 1px solid color-mix(in oklab, oklch(0.92 0.004 286.32) 70%, transparent); color: oklch(0.141 0.005 285.823); }"
     },
     {
       "name": "Project Card",
@@ -212,39 +220,48 @@
       "css": ".ds-card-project { display: flex; flex-direction: column; overflow: hidden; border: 1px solid color-mix(in oklab, oklch(0.92 0.004 286.32) 60%, transparent); border-radius: 0.65rem; background: oklch(1 0 0); font-family: Lexend, sans-serif; transition: transform 0.3s ease; } .ds-card-project:hover { transform: translateY(-0.25rem); } .ds-card-project__media { aspect-ratio: 16 / 10; background: oklch(0.967 0.001 286.375); } .ds-card-project__body { padding: 1rem; } .ds-card-project__title { margin: 0; font-size: 1rem; font-weight: 500; color: oklch(0.141 0.005 285.823); } .ds-card-project__meta { margin: 0.25rem 0 0; font-size: 0.75rem; color: oklch(0.552 0.016 285.938); }"
     },
     {
+      "name": "Experience Rail Item",
+      "kind": "list-item",
+      "refersTo": null,
+      "description": "Timeline row: ember dot + connecting line, most-distinctive bullet always visible, remaining bullets behind a native disclosure.",
+      "html": "<article class=\"ds-rail-item\"><span class=\"ds-rail-dot\"></span><div><h3>Company</h3><p>Lead achievement line.</p><details><summary>3 more details</summary></details></div></article>",
+      "css": ".ds-rail-dot { display: inline-block; width: 0.75rem; height: 0.75rem; border-radius: 9999px; border: 2px solid #EA580C; background: oklch(1 0 0); }"
+    },
+    {
       "name": "Sticky Header",
       "kind": "nav",
       "refersTo": null,
-      "description": "Glass sticky header with hairline border.",
-      "html": "<header class=\"ds-header\"><div class=\"ds-header__inner\"><span class=\"ds-header__brand\">HN</span><nav class=\"ds-header__nav\"><a href=\"#about\">About</a><a href=\"#projects\">Projects</a><a href=\"#contact\">Contact</a></nav></div></header>",
-      "css": ".ds-header { position: sticky; top: 0; z-index: 40; width: 100%; border-bottom: 1px solid color-mix(in oklab, oklch(0.92 0.004 286.32) 40%, transparent); background: color-mix(in oklab, oklch(1 0 0) 80%, transparent); backdrop-filter: blur(12px); font-family: Lexend, sans-serif; } .ds-header__inner { display: flex; align-items: center; justify-content: space-between; max-width: 72rem; margin: 0 auto; padding: 0.75rem 1rem; } .ds-header__brand { font-size: 0.875rem; font-weight: 500; color: oklch(0.141 0.005 285.823); } .ds-header__nav { display: flex; gap: 1rem; } .ds-header__nav a { font-size: 0.875rem; color: oklch(0.552 0.016 285.938); text-decoration: none; } .ds-header__nav a:hover { color: #2563eb; }"
+      "description": "Glass sticky header with hairline border; active section renders as a solid ember pill.",
+      "html": "<header class=\"ds-header\"><div class=\"ds-header__inner\"><span class=\"ds-header__brand\">HN</span><nav class=\"ds-header__nav\"><a href=\"#about\" class=\"is-active\">About</a><a href=\"#projects\">Projects</a><a href=\"#contact\">Contact</a></nav></div></header>",
+      "css": ".ds-header { position: sticky; top: 0; z-index: 40; width: 100%; border-bottom: 1px solid color-mix(in oklab, oklch(0.92 0.004 286.32) 40%, transparent); background: color-mix(in oklab, oklch(1 0 0) 80%, transparent); backdrop-filter: blur(12px); font-family: Lexend, sans-serif; } .ds-header__inner { display: flex; align-items: center; justify-content: space-between; max-width: 72rem; margin: 0 auto; padding: 0.75rem 1rem; } .ds-header__brand { font-size: 0.875rem; font-weight: 500; color: oklch(0.141 0.005 285.823); } .ds-header__nav { display: flex; gap: 1rem; } .ds-header__nav a { font-size: 0.875rem; color: oklch(0.552 0.016 285.938); text-decoration: none; border-radius: 0.525rem; padding: 0.375rem 0.75rem; } .ds-header__nav a:hover { color: #EA580C; } .ds-header__nav a.is-active { background: #EA580C; color: #fff; }"
     }
   ],
   "narrative": {
     "northStar": "The Hiring Desk Brief",
-    "overview": "This site is a recruiter-facing brief, not a mood board. Hierarchy is crisp and short: who you are, where you worked, what you shipped, how to reach you. Surfaces stay quiet so live demos and project evidence do the proving. Ornament is scarce; motion is purposeful (typed intro, split-name entrance, soft card hover) rather than decorative noise.\n\nThe system is a light/dark shadcn-derived token set with Lexend as the single voice. Primary blue marks actions and focus — never large fields of color. Density is comfortable: max-width 6xl (72rem) containers, generous section padding, and clear scan landmarks.",
+    "overview": "This site is a recruiter-facing brief, not a mood board. Hierarchy is crisp and short: who you are, where you worked, what you shipped, how to reach you. Surfaces stay quiet so live demos and project evidence do the proving. Ornament is scarce; motion is purposeful (staggered dossier entrance, a swatch-select settle on the lead skill, soft card hover) rather than decorative noise.\n\nThe system is a light/dark shadcn-derived token set with Lexend as the single voice. Ember Orange marks actions, focus, and a small set of 'selected' states — never large fields of color. Density is comfortable: max-width 6xl (72rem) containers, generous section padding, and clear scan landmarks.",
     "keyCharacteristics": [
       "Single typeface (Lexend) across display through label",
       "Flat tonal layering with glass header; no structural shadow vocabulary",
-      "Scarce action blue on CTAs, focus rings, and active accents",
+      "Committed Ember accent on CTAs, focus rings, active nav, and one 'selected' mark per group — bold where it appears, still scarce in coverage",
       "Evidence-first project cards with soft hover lift only",
       "Restrained controls: soft radius (~10.4px base), quiet borders"
     ],
     "rules": [
-      { "name": "The Scarce Signal Rule", "body": "Action blue appears on primary CTAs, focus, and thin accent marks (e.g. contact rail) — not as large background fields. Its rarity keeps the scan path clear.", "section": "colors" },
-      { "name": "The Dual-Theme Parity Rule", "body": "Light and dark share the same roles; dark swaps paper/ink and deepens primary chroma slightly. Do not invent a third palette.", "section": "colors" },
+      { "name": "The Calibrated Signal Rule", "body": "Ember is the site's one committed color, but it still spends itself deliberately: full-saturation fills are reserved for the primary CTA, the active nav pill, and exactly one 'selected' mark per group (lead skill chip, active filter tab, current timeline dot) — never a large background wash.", "section": "colors" },
+      { "name": "The Dual-Theme Parity Rule", "body": "Light and dark share the same roles; dark steps the accent one notch brighter (orange-600 to orange-500) to hold contrast on near-black. Dark-mode utility variants resolve via a class-based @custom-variant bound to the .dark ancestor the theme toggle sets, not prefers-color-scheme.", "section": "colors" },
       { "name": "The One Voice Rule", "body": "Lexend is the only loaded face. Do not introduce a second display or serif pairing without an explicit redesign.", "section": "typography" },
       { "name": "The Flat-By-Default Rule", "body": "Surfaces rest flat. Do not add card drop shadows as a default treatment.", "section": "elevation" }
     ],
     "dos": [
       "Do keep the recruiter scan path short: profile → experience → projects → contact.",
-      "Do reserve action blue for CTAs, focus, and thin accent rails.",
+      "Do spend full-saturation Ember on the primary CTA and exactly one 'selected' mark per group.",
       "Do use Lexend exclusively and size for hierarchy.",
       "Do prefer tonal layering and blur over shadow stacks.",
-      "Do let project demos and thumbnails carry visual weight."
+      "Do let project demos, thumbnails, and the profile portrait carry visual weight as real authored assets."
     ],
     "donts": [
-      "Don't flood sections with primary blue backgrounds.",
+      "Don't flood sections with primary Ember backgrounds.",
+      "Don't mark more than one chip/tab/dot per group as 'selected'.",
       "Don't introduce a second display font or decorative serif without redesign intent.",
       "Don't default cards to heavy drop shadows.",
       "Don't invent testimonials, metrics, or employers not already on the site.",
