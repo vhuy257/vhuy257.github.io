@@ -1,8 +1,8 @@
 export const navItems = [
-  { id: "about", label: "Profile" },
-  { id: "experience", label: "Experiences" },
-  { id: "projects", label: "My Works" },
-  { id: "contact", label: "Contact Me" },
+  { id: "about", label: "Profile", shortLabel: "Profile" },
+  { id: "experience", label: "Experiences", shortLabel: "Experience" },
+  { id: "projects", label: "My Works", shortLabel: "Works" },
+  { id: "contact", label: "Contact Me", shortLabel: "Contact" },
 ] as const;
 
 export type NavSectionId = (typeof navItems)[number]["id"];
