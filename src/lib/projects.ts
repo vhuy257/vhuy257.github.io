@@ -29,7 +29,7 @@ export const PROJECT_FILTERS: {
   })),
 ];
 
-export const PREVIEW_LIMIT = 3;
+export const PREVIEW_LIMIT = 4;
 
 export const visibleProjectsData = projectsData.filter(
   (item) =>

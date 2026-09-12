@@ -92,30 +92,30 @@ export const projectsData = [
     demoLink: "https://saas-template.vhuy2571990.workers.dev",
     category: "web-template" as ProjectCategory,
   },
-  {
-    title: "Basilico Home",
-    imageUrl: "/slider-7.png",
-    demoLink: "/basilico",
-    category: "web-template" as ProjectCategory,
-  },
+  // {
+  //   title: "Basilico Home",
+  //   imageUrl: "/slider-7.png",
+  //   demoLink: "/basilico",
+  //   category: "web-template" as ProjectCategory,
+  // },
   {
     title: "Positivus Landing Page",
     imageUrl: "/positivus.png",
     demoLink: "https://vhuy257.github.io/positivus/",
     category: "web-template" as ProjectCategory,
   },
-  {
-    title: "Coffee Shop",
-    imageUrl: "/slider-2.jpg",
-    demoLink: "/coffee-shop",
-    category: "web-template" as ProjectCategory,
-  },
-  {
-    title: "Basilico Sushi",
-    imageUrl: "/slider-8.png",
-    demoLink: "/basilico/sushi",
-    category: "web-template" as ProjectCategory,
-  },
+  // {
+  //   title: "Coffee Shop",
+  //   imageUrl: "/slider-2.jpg",
+  //   demoLink: "/coffee-shop",
+  //   category: "web-template" as ProjectCategory,
+  // },
+  // {
+  //   title: "Basilico Sushi",
+  //   imageUrl: "/slider-8.png",
+  //   demoLink: "/basilico/sushi",
+  //   category: "web-template" as ProjectCategory,
+  // },
   {
     title: "Animate to height: auto",
     imageUrl: "/css-tricky.png",
@@ -179,12 +179,12 @@ export const projectsData = [
     techName: "LCP, INP, and CLS: what they measure and how to improve Core Web Vitals",
     category: "technical-tips" as ProjectCategory,
   },
-  {
-    title: "All SVG Icons",
-    imageUrl: "/all_svg_icons.png",
-    demoLink: "https://allsvgicons.com/",
-    category: "web-template" as ProjectCategory,
-  },
+  // {
+  //   title: "All SVG Icons",
+  //   imageUrl: "/all_svg_icons.png",
+  //   demoLink: "https://allsvgicons.com/",
+  //   category: "web-template" as ProjectCategory,
+  // },
   {
     title: "SmileCare Dental CMS",
     imageUrl: "/dental-dashboard.png",

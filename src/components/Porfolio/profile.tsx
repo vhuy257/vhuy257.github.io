@@ -62,7 +62,7 @@ export default function Profile() {
             alt="Huy Nguyen"
             width={1024}
             height={1028}
-            className="h-auto w-full object-contain"
+            className="h-auto w-full object-contain rounded-2xl"
             priority
             fetchPriority="high"
           />
