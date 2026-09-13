@@ -7,6 +7,17 @@ export function cn(...inputs: ClassValue[]) {
 
 export const workExpsData = [
   {
+    companyName: "Cyberlogitec",
+    position: "Frontend Developer",
+    description: [
+      "Intergrate CVAT Component into the Admin Dashboard System, handle SAM 2 Model for the company, ensuring smooth and efficient user management process.",
+      "Developed an Admin Dashboard System for ERP System, creating a dynamic and responsive design using React, Tailwind CSS, and TypeScript.",
+      "Implement login functionality with social networking services, utilizing Next.js, Redux Thunk, and Next Authentication.",
+      "Create the business logic functions for the User Management Page, ensuring smooth and efficient user management process.",
+      "Ensure the website is optimized for search engines and has a fast loading time. Provide regular reports to the team and management.",
+    ],
+  },
+  {
     companyName: "Lotte Innovation",
     position: "Frontend Developer",
     description: [
@@ -85,12 +96,14 @@ export const projectsData = [
     imageUrl: "/verde-fintech-wallet.png",
     demoLink: "https://verde-fintech-wallet.vhuy2571990.workers.dev",
     category: "web-template" as ProjectCategory,
+    techStack: ["React", "AstroJs", "TypeScript", "Tailwind CSS"],
   },
   {
     title: "An Tâm Dental Studio",
     imageUrl: "/an-tam-dental.png",
     demoLink: "https://saas-template.vhuy2571990.workers.dev",
     category: "web-template" as ProjectCategory,
+    techStack: ["React", "Next.js", "TypeScript", "Tailwind CSS"],
   },
   // {
   //   title: "Basilico Home",
@@ -103,6 +116,7 @@ export const projectsData = [
     imageUrl: "/positivus.png",
     demoLink: "https://vhuy257.github.io/positivus/",
     category: "web-template" as ProjectCategory,
+    techStack: ["React", "Next.js", "TypeScript", "Tailwind CSS"],
   },
   // {
   //   title: "Coffee Shop",
@@ -190,6 +204,7 @@ export const projectsData = [
     imageUrl: "/dental-dashboard.png",
     demoLink: "https://dental-fe.vhuy2571990.workers.dev/dashboard",
     category: "cms-dashboard" as ProjectCategory,
+    techStack: ["React", "Next.js", "TypeScript", "Tailwind CSS"],
   },
 ];
 

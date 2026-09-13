@@ -152,6 +152,10 @@
   animation-delay: 180ms;
 }
 
+.work-cascade__item:nth-child(5) {
+  animation-delay: 240ms;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .work-cascade__item {
     animation: none;

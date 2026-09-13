@@ -1,8 +1,10 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import { ProjectGrid } from "./project-card";
+import { Icon } from "@iconify/react";
+import { ProjectGrid, ProjectList } from "./project-card";
 import { ProjectFilters, ViewAllLink } from "./project-filters";
+import { cn } from "@/lib/utils";
 import {
   PREVIEW_LIMIT,
   PROJECT_CATEGORIES,
@@ -10,8 +12,11 @@ import {
   type FilterKey,
 } from "@/lib/projects";
 
+type ViewMode = "grid" | "list";
+
 const Project = () => {
   const [filter, setFilter] = useState<FilterKey>("web-template");
+  const [view, setView] = useState<ViewMode>("grid");
 
   const previewProjects = useMemo(() => {
     if (filter === "all") {
@@ -56,14 +61,49 @@ const Project = () => {
             Browse by type: web templates and CMS dashboards.
           </p>
         </div>
-        {hasMore && (
-          <ViewAllLink category={filter === "all" ? undefined : filter} />
-        )}
+        <div className="flex items-center gap-3">
+          {hasMore && (
+            <ViewAllLink category={filter === "all" ? undefined : filter} />
+          )}
+          <div
+            role="tablist"
+            aria-label="Works view"
+            className="inline-flex items-center gap-1 rounded-md border border-border p-1"
+          >
+            {(
+              [
+                { key: "grid", label: "", icon: "mdi:view-grid-outline" },
+                { key: "list", label: "", icon: "mdi:view-agenda-outline" },
+              ] as const
+            ).map((mode) => (
+              <button
+                key={mode.key}
+                type="button"
+                role="tab"
+                aria-selected={view === mode.key}
+                onClick={() => setView(mode.key)}
+                className={cn(
+                  "inline-flex items-center gap-1.5 rounded-sm px-2.5 py-1 text-xs font-medium transition-colors duration-200",
+                  view === mode.key
+                    ? "bg-orange-600 text-white"
+                    : "text-muted-foreground hover:text-foreground"
+                )}
+              >
+                <Icon icon={mode.icon} width={14} height={14} />
+                {mode.label}
+              </button>
+            ))}
+          </div>
+        </div>
       </div>
 
       <ProjectFilters active={filter} onChange={setFilter} />
 
-      <ProjectGrid projects={previewProjects} />
+      {view === "grid" ? (
+        <ProjectGrid projects={previewProjects} />
+      ) : (
+        <ProjectList projects={previewProjects} />
+      )}
     </section>
   );
 };
